@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Norain Fahira | GitHub Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://github.com/norainfahira.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <!-- Loading Animation -->
+        <div id="loading">
+            <div class="spinner"></div>
+            <p>Loading GitHub data...</p>
+        </div>
+
+        <!-- Profile Section -->
+        <header class="profile-section">
+            <div class="profile-container" id="profile-container">
+                <!-- Profile data will be loaded here by JavaScript -->
+            </div>
+        </header>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <h2><i class="fas fa-chart-line"></i> GitHub Stats</h2>
+            <div class="stats-grid" id="stats-container">
+                <!-- Stats will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Repositories Section -->
+        <section class="repos-section">
+            <div class="section-header">
+                <h2><i class="fas fa-code-branch"></i> My Repositories</h2>
+                <div class="filter-controls">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="updated">Recently Updated</button>
+                    <button class="filter-btn" data-filter="stars">Most Stars</button>
+                </div>
+            </div>
+            
+            <div class="repos-grid" id="repos-container">
+                <!-- Repos will be loaded here -->
+            </div>
+            
+            <div class="view-more">
+                <a href="https://github.com/norainfahira?tab=repositories" target="_blank" class="github-btn">
+                    <i class="fab fa-github"></i> View All on GitHub
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>Auto-sync with GitHub • Updated in real-time</p>
+            <p class="footer-note">
+                <i class="fas fa-sync-alt"></i> Last synced: <span id="last-sync">Just now</span>
+            </p>
+            <div class="footer-links">
+                <a href="https://github.com/norainfahira" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://github.com/norainfahira?tab=repositories" target="_blank">
+                    <i class="fas fa-code"></i> Repositories
+                </a>
+                <a href="https://github.com/norainfahira?tab=stars" target="_blank">
+                    <i class="fas fa-star"></i> Starred
+                </a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

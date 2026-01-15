@@ -5,10 +5,11 @@
     box-sizing: border-box;
 }
 
+//warna
 :root {
-    --primary: #2d3436;
+    --primary: #2d3436; //kelabu gelap
     --secondary: #636e72;
-    --accent: #0984e3;
+    --accent: #0984e3; //biru
     --light: #f5f6fa;
     --border: #dfe6e9;
     --card-bg: #ffffff;
@@ -20,7 +21,7 @@ body {
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     color: var(--primary);
     line-height: 1.6;
-    min-height: 100vh;
+    min-height: 100vh; //tinggi screen
     padding: 20px;
 }
 

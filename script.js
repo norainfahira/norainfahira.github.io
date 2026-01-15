@@ -2,18 +2,18 @@
 const GITHUB_USERNAME = 'norainfahira';
 const GITHUB_API_URL = `https://api.github.com/users/${GITHUB_USERNAME}`;
 
-// DOM Elements
-const loadingElement = document.getElementById('loading');
-const profileContainer = document.getElementById('profile-container');
-const statsContainer = document.getElementById('stats-container');
-const reposContainer = document.getElementById('repos-container');
-const lastSyncElement = document.getElementById('last-sync');
-const filterButtons = document.querySelectorAll('.filter-btn');
+// ambil elemen html
+const loadingElement = document.getElementById('loading'); //loading screen
+const profileContainer = document.getElementById('profile-container'); //profile
+const statsContainer = document.getElementById('stats-container'); //stats
+const reposContainer = document.getElementById('repos-container'); //repository
+const lastSyncElement = document.getElementById('last-sync'); //sync time
+const filterButtons = document.querySelectorAll('.filter-btn'); //filter
 
 // Language Colors (GitHub default colors)
 const LANGUAGE_COLORS = {
-    'JavaScript': '#f1e05a',
-    'Python': '#3572A5',
+    'JavaScript': '#f1e05a', //kuning
+    'Python': '#3572A5', //biru
     'Java': '#b07219',
     'TypeScript': '#2b7489',
     'C++': '#f34b7d',
@@ -30,7 +30,7 @@ const LANGUAGE_COLORS = {
     'Vue': '#41b883',
     'React': '#61dafb',
     'Angular': '#dd0031',
-    'default': '#0366d6'
+    'default': '#0366d6' //warna default kalau languange lain
 };
 
 // Initialize
@@ -207,6 +207,7 @@ function getLanguageColor(language) {
     return LANGUAGE_COLORS[language] || LANGUAGE_COLORS.default;
 }
 
+//.....days ago
 function formatDate(dateString) {
     const date = new Date(dateString);
     const now = new Date();
@@ -233,6 +234,7 @@ function getRandomForks(repoCount) {
     return baseForks + randomFactor;
 }
 
+//last sync bila
 function updateLastSyncTime() {
     const now = new Date();
     lastSyncElement.textContent = now.toLocaleTimeString([], { 
@@ -265,6 +267,7 @@ function setupEventListeners() {
     });
 }
 
+//error mesej
 function showError() {
     loadingElement.innerHTML = `
         <div style="text-align: center;">

@@ -19,13 +19,13 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6; /* Jarak antara baris */
             color: #333; /* Warna text hitam kelabu */
-            background-color: #f0f8ff; /* Biru sangat muda */
+            background-color: #f0f8ff; /* light blue */
             max-width: 1200px; /* Maximum width untuk desktop */
             margin: 0 auto; /* Center kan website */
             padding: 20px; /* Padding sekeliling */
         }
         
-        /* ========== HEADER STYLES ========== */
+        /* style header */
         header {
             background: linear-gradient(135deg, #1e3c72, #2a5298); /* Gradient biru */
             color: white;
@@ -33,7 +33,7 @@
             border-radius: 10px;
             margin-bottom: 30px;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(30, 60, 114, 0.2); /* Bayang untuk efek 3D */
+            box-shadow: 0 4px 12px rgba(30, 60, 114, 0.2); /* Bayang untuk 3D */
         }
         
         h1 {
@@ -83,7 +83,7 @@
             margin: 0 auto 20px; /* Center kan dan beri margin bawah */
         }
         
-        /* info syn with GitHub */
+        /* info sync with GitHub */
         .github-sync {
             background-color: #e6f2ff; /* Biru muda */
             padding: 15px;
@@ -145,7 +145,7 @@
             text-decoration: underline; /* Tambah underline ketika hover */
         }
         
-        /* ========== BUTTONS ========== */
+        /* buttons */
         .btn {
             display: inline-block; /* Supaya boleh set width dan padding */
             background-color: #4d7cff; /* Biru */
@@ -231,7 +231,7 @@
         <!-- ========== SIDEBAR (PROFILE INFO) ========== -->
         <aside class="sidebar">
             <!-- Profile picture dari GitHub -->
-            <img src="https://avatars.githubusercontent.com/u/583231?v=4" alt="Profile Picture" class="profile-pic" id="github-avatar">
+            <img src="https://avatars.githubusercontent.com/u/242617684?v=4" alt="Profile Picture" class="profile-pic" id="github-avatar">
             
             <!-- Nama dari GitHub -->
             <h2 id="github-name">GitHub User</h2>
@@ -243,7 +243,6 @@
             <div class="github-sync">
                 <h3><i class="fas fa-sync-alt"></i> Real-time GitHub Sync</h3>
                 <p>Website ini sync dengan GitHub profile. Data diambil dari GitHub API.</p>
-                <!-- Status sync akan diupdate oleh JavaScript -->
                 <p id="sync-status" class="student-note">Status: Menunggu sync dengan GitHub...</p>
             </div>
             
@@ -271,10 +270,7 @@
             
             <!-- Social media icons -->
             <div class="social-icons">
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.linkedin.com/in/norainfahira/"><i class="fab fa-linkedin"></i></a>
             </div>
         </aside>
         
@@ -282,42 +278,24 @@
         <main class="main-content">
             <!-- About me section -->
             <h2>About Me</h2>
-            <p>Hai! Saya seorang student yang baru belajar web development. Website ini adalah project pertama saya yang integrate dengan GitHub API.</p>
+            <p>Hi ! I'm student of Computer Science in Data Engineering at Universiti Teknologi Malaysia.</p>
             
             <!-- Student note styling -->
             <div class="student-note">
-                <strong>Catatan Student Newbie:</strong> Saya baru belajar coding, jadi website ini mungkin ada bug. Mohon maaf kalau ada error!
+                <strong>Notes :</strong>I'm a newbie in computer science and still learning. I will make sure time by time I will improve my skills.
             </div>
             
             <!-- Skills list -->
             <h3>My Skills</h3>
             <ul>
-                <li>HTML & CSS (masih belajar)</li>
-                <li>JavaScript (baru mula)</li>
+                <li>HTML & CSS</li>
                 <li>Git & GitHub</li>
-                <li>Responsive Design</li>
+
             </ul>
-            
-            <!-- Projects section -->
-            <h3>My Projects</h3>
-            <p>Ini adalah beberapa project yang saya buat:</p>
-            
-            <!-- Note about projects -->
-            <div class="student-note">
-                <strong>Info:</strong> Project list akan diambil dari GitHub repository kamu nanti.
-            </div>
-            
-            <!-- Container untuk projects -->
-            <div id="projects-container">
-                <!-- Project akan dimasukkan di sini oleh JavaScript -->
-                <p>Loading projects from GitHub...</p>
-            </div>
-            
+         
             <!-- Readme section dari GitHub -->
             <div class="readme-section">
                 <h3><i class="fab fa-github"></i> GitHub README</h3>
-                <p>Content dari GitHub profile README kamu akan muncul di sini:</p>
-                <!-- Content README akan diisi oleh JavaScript -->
                 <div id="readme-content">
                     <p>Loading README from GitHub profile...</p>
                 </div>
@@ -332,10 +310,8 @@
     </div>
     
     <footer>
-        <p>Made with <i class="fas fa-heart" style="color: #ff6b6b;"></i> by a Student Newbie</p>
-        <!-- Current date akan diisi oleh JavaScript -->
+        <p>Made with <i class="fas fa-heart" style="color: #ff6b6b;"></i> by me</p>
         <p>Last updated: <span id="current-date"></span> | Synced with GitHub</p>
-        <p>Website ini menggunakan warna dalam range biru seperti yang diminta!</p>
     </footer>
 
     <!-- javascript -->
@@ -354,14 +330,15 @@
         function simulateGitHubAPI() {
             const githubData = {
                 name: "Nor Ain Fahira binti Muhamad Fariq",
-                bio: "Unergraduate Student of Computer Science in Data Engineering",
+                bio: "Unergraduate Student of Computer Science in Data Engineering at Universiti Teknologi Malaysia",
                 location: "Johor Bahru, Malaysia",
+                blog: "#",
                 html_url: "https://github.com/norainfahira",
-                avatar_url: "https://avatars.githubusercontent.com/u/583231?v=4",
-                public_repos: 12,
-                public_gists: 3,
-                followers: 24,
-                following: 42
+                avatar_url: "https://avatars.githubusercontent.com/u/242617684?v=4",
+                public_repos: 3,
+                public_gists: 0,
+                followers: 5,
+                following: 4,
             };
             
             // Update profile data
@@ -388,9 +365,6 @@
             // Simulate projects
             const projects = [
                 { name: "Personal Portfolio", description: "Website portfolio pertama saya", language: "HTML/CSS", stars: 3 },
-                { name: "To-Do List App", description: "Aplikasi untuk manage task harian", language: "JavaScript", stars: 5 },
-                { name: "Weather App", description: "Aplikasi cuaca menggunakan API", language: "JavaScript", stars: 2 },
-                { name: "Recipe Book", description: "Website untuk simpan resepi", language: "HTML/CSS", stars: 1 }
             ];
             
             let projectsHTML = '';
@@ -412,12 +386,11 @@
                 <h4>👋 Hello, I'm ${githubData.name}!</h4>
                 <p>I'm a Computer Science student passionate about coding and open source. Currently learning:</p>
                 <ul>
-                    <li>🌐 Web Development (HTML, CSS, JavaScript)</li>
-                    <li>📱 Mobile App Development</li>
+                    <li>🌐 Web Development (HTML, JavaScript)</li>
                     <li>🔧 Git & GitHub</li>
-                    <li>💾 Database Management</li>
                 </ul>
-                <p>Check out my repositories to see what I'm working on!</p>
+                <p><strong>🎯 Currently Learning :</strong> How to do coding using C++ and HTML</p>
+                <p><strong>🎯 My Target :</strong> Be an excellence graduate, pursue a better life and give back to the community.</p>
             </div>
             `;
             
@@ -433,7 +406,7 @@
             setTimeout(simulateGitHubAPI, 1500);
             
             // Setup contact button
-            document.getElementById('contact-btn').href = "mailto:example@email.com";
+            document.getElementById('contact-btn').href = "mailto:norainfahira@gmail.com";
         }
         
         // Panggil initWebsite ketika page load

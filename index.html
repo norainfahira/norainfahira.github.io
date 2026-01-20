@@ -7,8 +7,7 @@
     <!-- Link untuk font awesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* ========== GLOBAL STYLES ========== */
-        /* Ini reset semua element supaya consistent */
+   
         * {
             box-sizing: border-box; /* Pastikan padding tak ubah width */
             margin: 0;
@@ -47,7 +46,6 @@
             opacity: 0.9; /* Sedikit transparent */
         }
         
-        /* ========== LAYOUT CONTAINER ========== */
         .container {
             display: flex; /* Flexbox untuk layout dua column */
             flex-wrap: wrap; /* Boleh wrap kalau screen kecil */
@@ -55,7 +53,6 @@
             margin-bottom: 30px;
         }
         
-        /* ========== SIDEBAR (PROFILE) ========== */
         .sidebar {
             flex: 1; /* Ambil 1 bahagian dari flex container */
             min-width: 300px; /* Minimum width sebelum wrap */
@@ -65,7 +62,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 100, 0.1); /* Bayang biru */
         }
         
-        /* ========== MAIN CONTENT AREA ========== */
+        /*Main Content*/
         .main-content {
             flex: 2; /* Ambil 2 bahagian (lebih besar dari sidebar) */
             min-width: 300px;
@@ -75,7 +72,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 100, 0.1);
         }
         
-        /* ========== PROFILE PICTURE ========== */
+        /*Gambar*/
         .profile-pic {
             width: 180px;
             height: 180px;
@@ -86,7 +83,7 @@
             margin: 0 auto 20px; /* Center kan dan beri margin bawah */
         }
         
-        /* ========== GITHUB SYNC INFO ========== */
+        /* info syn with GitHub */
         .github-sync {
             background-color: #e6f2ff; /* Biru muda */
             padding: 15px;
@@ -95,7 +92,6 @@
             border-left: 5px solid #2a5298; /* Border kiri biru */
         }
         
-        /* ========== GITHUB STATS ========== */
         .github-stats {
             display: flex; /* Flexbox untuk stats */
             justify-content: space-around; /* Sebarkan sama rata */
@@ -119,7 +115,7 @@
             color: #1e3c72; /* Warna biru gelap */
         }
         
-        /* ========== README SECTION ========== */
+        /* README */
         .readme-section {
             background-color: #f8fbff; /* Biru sangat muda */
             padding: 20px;
@@ -128,7 +124,6 @@
             border: 1px dashed #4d7cff; /* Border putus-putus biru */
         }
         
-        /* ========== FOOTER ========== */
         footer {
             text-align: center;
             padding: 20px;
@@ -138,7 +133,7 @@
             margin-top: 20px;
         }
         
-        /* ========== LINKS ========== */
+        /* links */
         a {
             color: #2a5298; /* Warna biru untuk link */
             text-decoration: none; /* Buang underline default */
@@ -166,8 +161,7 @@
             background-color: #2a5298; /* Biru lebih gelap ketika hover */
             text-decoration: none; /* Jangan ada underline */
         }
-        
-        /* ========== SOCIAL ICONS ========== */
+    
         .social-icons {
             display: flex; /* Flexbox untuk align icons */
             justify-content: center; /* Center kan icons */
@@ -185,7 +179,7 @@
             color: #1e3c72;
         }
         
-        /* ========== SECTION HEADINGS ========== */
+        /* header untuk section */
         h2 {
             color: #1e3c72; /* Biru gelap */
             margin-bottom: 15px;
@@ -198,7 +192,7 @@
             margin: 15px 0 10px 0;
         }
         
-        /* ========== RESPONSIVE DESIGN ========== */
+        /* responsive design */
         @media (max-width: 768px) {
             /* Untuk mobile devices */
             .container {
@@ -214,7 +208,6 @@
             }
         }
         
-        /* ========== STUDENT NEWBIE STYLING ========== */
         .student-note {
             background-color: #e6f2ff; /* Biru muda */
             padding: 10px;
@@ -226,14 +219,14 @@
     </style>
 </head>
 <body>
-    <!-- ========== HEADER SECTION ========== -->
+    <!-- header -->
     <header>
         <h1>My Personal Website</h1>
         <p class="tagline">Student | Developer | GitHub Enthusiast</p>
         <p><i class="fas fa-sync-alt"></i> Live Sync with GitHub Profile</p>
     </header>
     
-    <!-- ========== MAIN CONTAINER ========== -->
+    <!-- main container -->
     <div class="container">
         <!-- ========== SIDEBAR (PROFILE INFO) ========== -->
         <aside class="sidebar">
@@ -285,7 +278,7 @@
             </div>
         </aside>
         
-        <!-- ========== MAIN CONTENT AREA ========== -->
+        <!-- main content -->
         <main class="main-content">
             <!-- About me section -->
             <h2>About Me</h2>
@@ -338,7 +331,6 @@
         </main>
     </div>
     
-    <!-- ========== FOOTER ========== -->
     <footer>
         <p>Made with <i class="fas fa-heart" style="color: #ff6b6b;"></i> by a Student Newbie</p>
         <!-- Current date akan diisi oleh JavaScript -->
@@ -346,7 +338,7 @@
         <p>Website ini menggunakan warna dalam range biru seperti yang diminta!</p>
     </footer>
 
-    <!-- ========== JAVASCRIPT ========== -->
+    <!-- javascript -->
     <script>
         // Function untuk format date
         function formatDate() {
@@ -360,14 +352,11 @@
         
         // Function untuk simulate GitHub API call
         function simulateGitHubAPI() {
-            // Ini adalah simulation data GitHub
-            // Dalam real implementation, kamu akan guna GitHub API
             const githubData = {
-                name: "Ahmad Salleh",
-                bio: "Computer Science student | Passionate about open source | Learning web development",
-                location: "Kuala Lumpur, Malaysia",
-                blog: "https://ahmadsalleh.dev",
-                html_url: "https://github.com/ahmadsalleh",
+                name: "Nor Ain Fahira binti Muhamad Fariq",
+                bio: "Unergraduate Student of Computer Science in Data Engineering",
+                location: "Johor Bahru, Malaysia",
+                html_url: "https://github.com/norainfahira",
                 avatar_url: "https://avatars.githubusercontent.com/u/583231?v=4",
                 public_repos: 12,
                 public_gists: 3,

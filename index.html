@@ -3,82 +3,452 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nor Ain Fahira | GitHub Portfolio</title>
-     <!-- Page title -->
-    
+    <title>My Personal Website - GitHub Sync</title>
+    <!-- Link untuk font awesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Font Awesome -->
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="https://github.com/norainfahira.png" type="image/x-icon">
+    <style>
+        /* ========== GLOBAL STYLES ========== */
+        /* Ini reset semua element supaya consistent */
+        * {
+            box-sizing: border-box; /* Pastikan padding tak ubah width */
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Setting untuk seluruh body */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6; /* Jarak antara baris */
+            color: #333; /* Warna text hitam kelabu */
+            background-color: #f0f8ff; /* Biru sangat muda */
+            max-width: 1200px; /* Maximum width untuk desktop */
+            margin: 0 auto; /* Center kan website */
+            padding: 20px; /* Padding sekeliling */
+        }
+        
+        /* ========== HEADER STYLES ========== */
+        header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298); /* Gradient biru */
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(30, 60, 114, 0.2); /* Bayang untuk efek 3D */
+        }
+        
+        h1 {
+            font-size: 2.8rem; /* Saiz font besar untuk tajuk */
+            margin-bottom: 10px; /* Ruang bawah tajuk */
+        }
+        
+        .tagline {
+            font-size: 1.2rem; /* Saiz untuk tagline */
+            opacity: 0.9; /* Sedikit transparent */
+        }
+        
+        /* ========== LAYOUT CONTAINER ========== */
+        .container {
+            display: flex; /* Flexbox untuk layout dua column */
+            flex-wrap: wrap; /* Boleh wrap kalau screen kecil */
+            gap: 30px; /* Jarak antara sidebar dan main content */
+            margin-bottom: 30px;
+        }
+        
+        /* ========== SIDEBAR (PROFILE) ========== */
+        .sidebar {
+            flex: 1; /* Ambil 1 bahagian dari flex container */
+            min-width: 300px; /* Minimum width sebelum wrap */
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 8px rgba(0, 0, 100, 0.1); /* Bayang biru */
+        }
+        
+        /* ========== MAIN CONTENT AREA ========== */
+        .main-content {
+            flex: 2; /* Ambil 2 bahagian (lebih besar dari sidebar) */
+            min-width: 300px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 8px rgba(0, 0, 100, 0.1);
+        }
+        
+        /* ========== PROFILE PICTURE ========== */
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%; /* Buat bulat */
+            object-fit: cover; /* Pastikan gambar tak stretch */
+            border: 5px solid #4d7cff; /* Border biru */
+            display: block; /* Supaya boleh margin auto */
+            margin: 0 auto 20px; /* Center kan dan beri margin bawah */
+        }
+        
+        /* ========== GITHUB SYNC INFO ========== */
+        .github-sync {
+            background-color: #e6f2ff; /* Biru muda */
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #2a5298; /* Border kiri biru */
+        }
+        
+        /* ========== GITHUB STATS ========== */
+        .github-stats {
+            display: flex; /* Flexbox untuk stats */
+            justify-content: space-around; /* Sebarkan sama rata */
+            flex-wrap: wrap; /* Boleh wrap kalau tak muat */
+            margin-top: 20px;
+        }
+        
+        .stat {
+            text-align: center;
+            padding: 15px;
+            background-color: #f8fbff; /* Biru sangat muda */
+            border-radius: 8px;
+            min-width: 120px; /* Minimum width untuk setiap stat */
+            margin: 5px;
+            border: 1px solid #cce0ff; /* Border biru muda */
+        }
+        
+        .stat-value {
+            font-size: 1.8rem; /* Saiz besar untuk nombor */
+            font-weight: bold;
+            color: #1e3c72; /* Warna biru gelap */
+        }
+        
+        /* ========== README SECTION ========== */
+        .readme-section {
+            background-color: #f8fbff; /* Biru sangat muda */
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 25px;
+            border: 1px dashed #4d7cff; /* Border putus-putus biru */
+        }
+        
+        /* ========== FOOTER ========== */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1e3c72; /* Biru gelap */
+            color: white;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        /* ========== LINKS ========== */
+        a {
+            color: #2a5298; /* Warna biru untuk link */
+            text-decoration: none; /* Buang underline default */
+            font-weight: bold;
+        }
+        
+        a:hover {
+            color: #1e3c72; /* Warna biru lebih gelap ketika hover */
+            text-decoration: underline; /* Tambah underline ketika hover */
+        }
+        
+        /* ========== BUTTONS ========== */
+        .btn {
+            display: inline-block; /* Supaya boleh set width dan padding */
+            background-color: #4d7cff; /* Biru */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 5px;
+            text-align: center;
+            transition: background-color 0.3s; /* Animasi smooth untuk hover */
+        }
+        
+        .btn:hover {
+            background-color: #2a5298; /* Biru lebih gelap ketika hover */
+            text-decoration: none; /* Jangan ada underline */
+        }
+        
+        /* ========== SOCIAL ICONS ========== */
+        .social-icons {
+            display: flex; /* Flexbox untuk align icons */
+            justify-content: center; /* Center kan icons */
+            margin-top: 20px;
+            gap: 15px; /* Jarak antara icons */
+        }
+        
+        .social-icons a {
+            font-size: 1.5rem; /* Saiz icon besar sikit */
+            color: #2a5298;
+            transition: color 0.3s; /* Animasi smooth untuk hover */
+        }
+        
+        .social-icons a:hover {
+            color: #1e3c72;
+        }
+        
+        /* ========== SECTION HEADINGS ========== */
+        h2 {
+            color: #1e3c72; /* Biru gelap */
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e6f2ff; /* Garis bawah biru muda */
+        }
+        
+        h3 {
+            color: #2a5298; /* Biru */
+            margin: 15px 0 10px 0;
+        }
+        
+        /* ========== RESPONSIVE DESIGN ========== */
+        @media (max-width: 768px) {
+            /* Untuk mobile devices */
+            .container {
+                flex-direction: column; /* Susun atas bawah, bukan kiri kanan */
+            }
+            
+            h1 {
+                font-size: 2.2rem; /* Kurangkan saiz font untuk mobile */
+            }
+            
+            .sidebar, .main-content {
+                width: 100%; /* Ambil full width untuk mobile */
+            }
+        }
+        
+        /* ========== STUDENT NEWBIE STYLING ========== */
+        .student-note {
+            background-color: #e6f2ff; /* Biru muda */
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 0.9rem; /* Saiz font kecil sikit */
+            border-left: 4px solid #4d7cff; /* Border kiri biru */
+        }
+    </style>
 </head>
+<body>
+    <!-- ========== HEADER SECTION ========== -->
+    <header>
+        <h1>My Personal Website</h1>
+        <p class="tagline">Student | Developer | GitHub Enthusiast</p>
+        <p><i class="fas fa-sync-alt"></i> Live Sync with GitHub Profile</p>
+    </header>
     
-<body> <!-- Main content of the webpage --> 
+    <!-- ========== MAIN CONTAINER ========== -->
     <div class="container">
-        <!-- Loading Animation -->
-        <div id="loading">
-            <div class="spinner"></div>
-            <p>Loading GitHub data...</p>
-        </div>
-
-        <!-- Profile Section -->
-        <header class="profile-section">
-            <div class="profile-container" id="profile-container">
-                <!-- Profile data will be loaded here by JavaScript -->
+        <!-- ========== SIDEBAR (PROFILE INFO) ========== -->
+        <aside class="sidebar">
+            <!-- Profile picture dari GitHub -->
+            <img src="https://avatars.githubusercontent.com/u/583231?v=4" alt="Profile Picture" class="profile-pic" id="github-avatar">
+            
+            <!-- Nama dari GitHub -->
+            <h2 id="github-name">GitHub User</h2>
+            
+            <!-- Bio dari GitHub -->
+            <p id="github-bio">Bio from GitHub will appear here...</p>
+            
+            <!-- GitHub sync info box -->
+            <div class="github-sync">
+                <h3><i class="fas fa-sync-alt"></i> Real-time GitHub Sync</h3>
+                <p>Website ini sync dengan GitHub profile. Data diambil dari GitHub API.</p>
+                <!-- Status sync akan diupdate oleh JavaScript -->
+                <p id="sync-status" class="student-note">Status: Menunggu sync dengan GitHub...</p>
             </div>
-        </header>
-
-        <!-- Stats Section -->
-        <section class="stats-section">
-            <h2><i class="fas fa-chart-line"></i> GitHub Stats</h2>
-            <div class="stats-grid" id="stats-container">
-                <!-- Stats will be loaded here -->
-            </div>
-        </section>
-
-        <!-- Repositories Section -->
-        <section class="repos-section">
-            <div class="section-header">
-                <h2><i class="fas fa-code-branch"></i> My Repositories</h2>
-                <div class="filter-controls">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="updated">Recently Updated</button>
-                    <button class="filter-btn" data-filter="stars">Most Stars</button>
+            
+            <!-- Contact information -->
+            <h3>Contact Info</h3>
+            <p><i class="fas fa-map-marker-alt"></i> <span id="github-location">Location not set</span></p>
+            <p><i class="fas fa-link"></i> Blog: <a href="#" id="github-blog">Not available</a></p>
+            <p><i class="fab fa-github"></i> GitHub: <a href="#" id="github-profile">https://github.com</a></p>
+            
+            <!-- GitHub stats container -->
+            <div class="github-stats">
+                <div class="stat">
+                    <div class="stat-value" id="repo-count">0</div>
+                    <div>Repositories</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="gist-count">0</div>
+                    <div>Gists</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="follower-count">0</div>
+                    <div>Followers</div>
                 </div>
             </div>
             
-            <div class="repos-grid" id="repos-container">
-                <!-- Repos will be loaded here -->
+            <!-- Social media icons -->
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </aside>
+        
+        <!-- ========== MAIN CONTENT AREA ========== -->
+        <main class="main-content">
+            <!-- About me section -->
+            <h2>About Me</h2>
+            <p>Hai! Saya seorang student yang baru belajar web development. Website ini adalah project pertama saya yang integrate dengan GitHub API.</p>
+            
+            <!-- Student note styling -->
+            <div class="student-note">
+                <strong>Catatan Student Newbie:</strong> Saya baru belajar coding, jadi website ini mungkin ada bug. Mohon maaf kalau ada error!
             </div>
             
-            <div class="view-more">
-                <a href="https://github.com/norainfahira?tab=repositories" target="_blank" class="github-btn">
-                    <i class="fab fa-github"></i> View All on GitHub
-                </a>
+            <!-- Skills list -->
+            <h3>My Skills</h3>
+            <ul>
+                <li>HTML & CSS (masih belajar)</li>
+                <li>JavaScript (baru mula)</li>
+                <li>Git & GitHub</li>
+                <li>Responsive Design</li>
+            </ul>
+            
+            <!-- Projects section -->
+            <h3>My Projects</h3>
+            <p>Ini adalah beberapa project yang saya buat:</p>
+            
+            <!-- Note about projects -->
+            <div class="student-note">
+                <strong>Info:</strong> Project list akan diambil dari GitHub repository kamu nanti.
             </div>
-        </section>
-
-        <!-- Footer -->
-        <footer>
-            <p>Auto-sync with GitHub • Updated in real-time</p>
-            <p class="footer-note">
-                <i class="fas fa-sync-alt"></i> Last synced: <span id="last-sync">Just now</span>
-            </p>
-            <div class="footer-links">
-                <a href="https://github.com/norainfahira" target="_blank">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
-                <a href="https://github.com/norainfahira?tab=repositories" target="_blank">
-                    <i class="fas fa-code"></i> Repositories
-                </a>
-                <a href="https://github.com/norainfahira?tab=stars" target="_blank">
-                    <i class="fas fa-star"></i> Starred
-                </a>
+            
+            <!-- Container untuk projects -->
+            <div id="projects-container">
+                <!-- Project akan dimasukkan di sini oleh JavaScript -->
+                <p>Loading projects from GitHub...</p>
             </div>
-        </footer>
+            
+            <!-- Readme section dari GitHub -->
+            <div class="readme-section">
+                <h3><i class="fab fa-github"></i> GitHub README</h3>
+                <p>Content dari GitHub profile README kamu akan muncul di sini:</p>
+                <!-- Content README akan diisi oleh JavaScript -->
+                <div id="readme-content">
+                    <p>Loading README from GitHub profile...</p>
+                </div>
+            </div>
+            
+            <!-- Action buttons -->
+            <div style="text-align: center; margin-top: 25px;">
+                <a href="#" class="btn" id="visit-github-btn"><i class="fab fa-github"></i> Visit My GitHub</a>
+                <a href="#" class="btn" id="contact-btn"><i class="fas fa-envelope"></i> Contact Me</a>
+            </div>
+        </main>
     </div>
+    
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <p>Made with <i class="fas fa-heart" style="color: #ff6b6b;"></i> by a Student Newbie</p>
+        <!-- Current date akan diisi oleh JavaScript -->
+        <p>Last updated: <span id="current-date"></span> | Synced with GitHub</p>
+        <p>Website ini menggunakan warna dalam range biru seperti yang diminta!</p>
+    </footer>
 
-    <script src="script.js"></script>
+    <!-- ========== JAVASCRIPT ========== -->
+    <script>
+        // Function untuk format date
+        function formatDate() {
+            const now = new Date();
+            return now.toLocaleDateString('en-MY', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+            });
+        }
+        
+        // Function untuk simulate GitHub API call
+        function simulateGitHubAPI() {
+            // Ini adalah simulation data GitHub
+            // Dalam real implementation, kamu akan guna GitHub API
+            const githubData = {
+                name: "Ahmad Salleh",
+                bio: "Computer Science student | Passionate about open source | Learning web development",
+                location: "Kuala Lumpur, Malaysia",
+                blog: "https://ahmadsalleh.dev",
+                html_url: "https://github.com/ahmadsalleh",
+                avatar_url: "https://avatars.githubusercontent.com/u/583231?v=4",
+                public_repos: 12,
+                public_gists: 3,
+                followers: 24,
+                following: 42
+            };
+            
+            // Update profile data
+            document.getElementById('github-name').textContent = githubData.name;
+            document.getElementById('github-bio').textContent = githubData.bio;
+            document.getElementById('github-location').textContent = githubData.location;
+            document.getElementById('github-blog').textContent = githubData.blog;
+            document.getElementById('github-blog').href = githubData.blog;
+            document.getElementById('github-profile').textContent = githubData.html_url;
+            document.getElementById('github-profile').href = githubData.html_url;
+            document.getElementById('github-avatar').src = githubData.avatar_url;
+            
+            // Update stats
+            document.getElementById('repo-count').textContent = githubData.public_repos;
+            document.getElementById('gist-count').textContent = githubData.public_gists;
+            document.getElementById('follower-count').textContent = githubData.followers;
+            
+            // Update buttons
+            document.getElementById('visit-github-btn').href = githubData.html_url;
+            
+            // Update sync status
+            document.getElementById('sync-status').innerHTML = `Status: <strong>Synced dengan GitHub</strong> (Last update: ${new Date().toLocaleTimeString()})`;
+            
+            // Simulate projects
+            const projects = [
+                { name: "Personal Portfolio", description: "Website portfolio pertama saya", language: "HTML/CSS", stars: 3 },
+                { name: "To-Do List App", description: "Aplikasi untuk manage task harian", language: "JavaScript", stars: 5 },
+                { name: "Weather App", description: "Aplikasi cuaca menggunakan API", language: "JavaScript", stars: 2 },
+                { name: "Recipe Book", description: "Website untuk simpan resepi", language: "HTML/CSS", stars: 1 }
+            ];
+            
+            let projectsHTML = '';
+            projects.forEach(project => {
+                projectsHTML += `
+                <div class="student-note" style="margin: 15px 0; padding: 15px;">
+                    <h4>${project.name} <span style="background-color: #e6f2ff; padding: 2px 8px; border-radius: 10px; font-size: 0.8rem;">${project.language}</span></h4>
+                    <p>${project.description}</p>
+                    <p><i class="far fa-star"></i> ${project.stars} stars</p>
+                </div>
+                `;
+            });
+            
+            document.getElementById('projects-container').innerHTML = projectsHTML;
+            
+            // Simulate README content
+            const readmeContent = `
+            <div class="student-note">
+                <h4>👋 Hello, I'm ${githubData.name}!</h4>
+                <p>I'm a Computer Science student passionate about coding and open source. Currently learning:</p>
+                <ul>
+                    <li>🌐 Web Development (HTML, CSS, JavaScript)</li>
+                    <li>📱 Mobile App Development</li>
+                    <li>🔧 Git & GitHub</li>
+                    <li>💾 Database Management</li>
+                </ul>
+                <p>Check out my repositories to see what I'm working on!</p>
+            </div>
+            `;
+            
+            document.getElementById('readme-content').innerHTML = readmeContent;
+        }
+        
+        // Function untuk initialize website
+        function initWebsite() {
+            // Set current date di footer
+            document.getElementById('current-date').textContent = formatDate();
+            
+            // Simulate API call dengan delay 1.5 saat
+            setTimeout(simulateGitHubAPI, 1500);
+            
+            // Setup contact button
+            document.getElementById('contact-btn').href = "mailto:example@email.com";
+        }
+        
+        // Panggil initWebsite ketika page load
+        window.onload = initWebsite;
+    </script>
 </body>
 </html>

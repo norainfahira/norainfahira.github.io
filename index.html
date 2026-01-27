@@ -328,8 +328,64 @@
 
             <!-- Course Subjects -->
             <h4>My Course Subjects</h4>
-    
-    
+            /* Container utama grid */
+            .grid-5-container {
+             display: grid;
+             grid-template-columns: repeat(3, 1fr);
+             gap: 25px;
+             padding: 20px;
+             }
+
+/* Style asas setiap kotak */
+.grid-item {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover effect */
+.grid-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* Kotak pertama span 2 kolum */
+.grid-item:first-child {
+  grid-column: span 2;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: white;
+}
+
+/* Warna different untuk setiap kotak */
+.grid-item:nth-child(1) { background: #4361ee; color: white; }
+.grid-item:nth-child(2) { background: #3a0ca3; color: white; }
+.grid-item:nth-child(3) { background: #7209b7; color: white; }
+.grid-item:nth-child(4) { background: #f72585; color: white; }
+.grid-item:nth-child(5) { background: #4cc9f0; color: white; }
+
+/* Ikon */
+.item-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  display: block;
+}
+
+/* Tajuk dalam kotak */
+.item-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Description */
+.item-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
             
             <!-- Action buttons -->
             <div style="text-align: center; margin-top: 25px;">

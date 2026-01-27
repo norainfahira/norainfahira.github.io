@@ -329,40 +329,46 @@
             <!-- Course Subjects -->
             <h4>My Course Subjects</h4>
             <div class="grid-minimal">
-  <div class="box">Kotak 1</div>
-  <div class="box">Kotak 2</div>
-  <div class="box">Kotak 3</div>
-  <div class="box">Kotak 4</div>
-  <div class="box">Kotak 5</div>
-</div>
+                <div class="box">Kotak 1</div>
+                <div class="box">Kotak 2</div>
+                <div class="box">Kotak 3</div>
+                <div class="box">Kotak 4</div>
+                <div class="box">Kotak 5</div>
+            </div>
 
-<style>
-.grid-minimal {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 20px;
-}
-.grid-minimal .box {
-  background: #4CAF50;
-  color: white;
-  padding: 30px;
-  border-radius: 10px;
-  text-align: center;
-}
-.grid-minimal .box:first-child {
-  grid-column: span 2;
-  background: #2196F3;
-}
-@media (max-width: 768px) {
-  .grid-minimal {
-    grid-template-columns: 1fr;
-  }
-  .grid-minimal .box:first-child {
-    grid-column: span 1;
-  }
-}
-</style>
+            <style>
+            .grid-minimal {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+            }
+            
+            .grid-minimal .box {
+            background: #4CAF50;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            }
+                
+            .grid-minimal .box:first-child {
+            grid-column: span 2;
+            background: #2196F3;
+            }
+                
+            @media (max-width: 768px) {
+                .grid-minimal {
+                grid-template-columns: 1fr;
+                }
+                
+                 .grid-minimal .box:first-child {
+                 grid-column: span 1;
+                }
+                
+            }
+            </style>
+            
             <!-- Action buttons -->
             <div style="text-align: center; margin-top: 25px;">
                 <a href="#" class="btn" id="visit-github-btn"><i class="fab fa-github"></i> Visit My GitHub</a>

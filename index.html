@@ -222,6 +222,69 @@
             border-left: 4px solid #4d7cff; /* Border kiri biru */
         }
     </style>
+
+    <script>
+// Function untuk pergi ke section
+function goToSection(sectionId) {
+    // Hide homepage
+    document.getElementById('homepage').style.display = 'none';
+    
+    // Hide all sections dulu
+    document.querySelectorAll('.subject-section').forEach(section => {
+        section.style.display = 'none';
+    });
+    
+    // Show section yang dipilih
+    const targetSection = document.getElementById(sectionId);
+    if (targetSection) {
+        targetSection.style.display = 'block';
+        // Scroll ke atas
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+}
+
+// Function untuk balik ke homepage
+function goBackHome() {
+    // Show homepage
+    document.getElementById('homepage').style.display = 'block';
+    
+    // Hide all sections
+    document.querySelectorAll('.subject-section').forEach(section => {
+        section.style.display = 'none';
+    });
+    
+    // Scroll ke atas
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+<style>
+/* CSS untuk hide/show sections */
+.subject-section {
+    display: none; /* Hidden by default */
+    min-height: 100vh;
+    padding: 40px;
+    background: white;
+}
+
+.back-button {
+    display: inline-block;
+    background: #3498db;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+}
+
+.back-button:hover {
+    background: #2980b9;
+}
+</style>
+    
 </head>
 <body>
     <!-- header -->
@@ -335,9 +398,28 @@
                 <div class="box">SECJ1013 - PROGRAMMING TECHNIQUE I</div>
                 <div class="box">ULRS1032 - INTEGRITY AND ANTI-CORRUPTION COURSE</div>
             </div> 
+            
+<section id="secp1513-details" class="subject-section">
+    <button class="back-button" onclick="goBackHome()">← Back to Home</button>
+    
+    <div class="subject-content">
+        <h2>SECP1513 - Technology and Information System</h2>
+        <p>Details about this subject...</p>
+        <!-- Tambah content lain di sini -->
+    </div>
+</section>
+
+<section id="secr1013-details" class="subject-section">
+    <button class="back-button" onclick="goBackHome()">← Back to Home</button>
+    
+    <div class="subject-content">
+        <h2>SECR1013 - Digital Logic</h2>
+        <p>Details about this subject...</p>
+    </div>
+</section>
 
 
-            <style>
+           <style>
             .grid-minimal {
             display: grid;
             grid-template-columns: repeat(3, 1fr);

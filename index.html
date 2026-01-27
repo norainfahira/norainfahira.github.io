@@ -191,6 +191,11 @@
             color: #2a5298; /* Biru */
             margin: 15px 0 10px 0;
         }
+
+        h4 {
+            color: #2a5298; /* Biru */
+            margin: 15px 0 10px 0;
+        }
         
         /* responsive design */
         @media (max-width: 768px) {
@@ -321,134 +326,10 @@
                 </li>
             </ul>
 
-            <h4>My Course Subjects - Grid Layout</h4>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-    <section class="subjects-grid">
-        <div class="header-section">
-            <h1><i class="fas fa-book-open"></i> My Course Subjects</h1>
-            <div class="summary">
-                <div class="summary-item">
-                    <span class="summary-label">Total Subjects</span>
-                    <span class="summary-value" id="total-subjects">0</span>
-                </div>
-                <div class="summary-item">
-                    <span class="summary-label">Total Credits</span>
-                    <span class="summary-value" id="total-credits">0</span>
-                </div>
-                <div class="summary-item">
-                    <span class="summary-label">Completed</span>
-                    <span class="summary-value" id="completed-count">0</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="filter-section">
-            <div class="filter-tags">
-                <button class="filter-btn active" data-filter="all">All Subjects</button>
-                <button class="filter-btn" data-filter="semester-1">Semester 1</button>
-                <button class="filter-btn" data-filter="semester-2">Semester 2</button>
-                <button class="filter-btn" data-filter="core">Core Subjects</button>
-                <button class="filter-btn" data-filter="elective">Electives</button>
-                <button class="filter-btn" data-filter="completed">Completed</button>
-                <button class="filter-btn" data-filter="ongoing">Ongoing</button>
-            </div>
-            <div class="search-box">
-                <input type="text" id="search-input" placeholder="Search subjects...">
-                <i class="fas fa-search"></i>
-            </div>
-        </div>
-
-        <div class="grid-container" id="subjects-container">
-            <!-- Subjects will be loaded here by JavaScript -->
-        </div>
-
-        <div class="empty-state" id="empty-state" style="display: none;">
-            <i class="fas fa-search"></i>
-            <h3>No subjects found</h3>
-            <p>Try a different search or filter</p>
-        </div>
-
-        <!-- Add Subject Modal -->
-        <div class="modal" id="add-subject-modal">
-            <div class="modal-content">
-                <h2><i class="fas fa-plus-circle"></i> Add New Subject</h2>
-                <form id="subject-form">
-                    <div class="form-group">
-                        <label for="subject-code">Subject Code*</label>
-                        <input type="text" id="subject-code" required placeholder="e.g., CSC101">
-                    </div>
-                    <div class="form-group">
-                        <label for="subject-name">Subject Name*</label>
-                        <input type="text" id="subject-name" required placeholder="e.g., Introduction to Programming">
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="credits">Credits*</label>
-                            <input type="number" id="credits" min="1" max="6" value="3" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="semester">Semester*</label>
-                            <select id="semester" required>
-                                <option value="1">Semester 1</option>
-                                <option value="2">Semester 2</option>
-                                <option value="3">Semester 3</option>
-                                <option value="4">Semester 4</option>
-                                <option value="5">Semester 5</option>
-                                <option value="6">Semester 6</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="lecturer">Lecturer</label>
-                        <input type="text" id="lecturer" placeholder="Lecturer's name">
-                    </div>
-                    <div class="form-group">
-                        <label for="schedule">Schedule</label>
-                        <input type="text" id="schedule" placeholder="e.g., Mon/Wed 9-10:30">
-                    </div>
-                    <div class="form-group">
-                        <label>Subject Type</label>
-                        <div class="radio-group">
-                            <label>
-                                <input type="radio" name="type" value="core" checked> Core Subject
-                            </label>
-                            <label>
-                                <input type="radio" name="type" value="elective"> Elective
-                            </label>
-                            <label>
-                                <input type="radio" name="type" value="lab"> Laboratory
-                            </label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Status</label>
-                        <div class="radio-group">
-                            <label>
-                                <input type="radio" name="status" value="ongoing" checked> Ongoing
-                            </label>
-                            <label>
-                                <input type="radio" name="status" value="completed"> Completed
-                            </label>
-                        </div>
-                    </div>
-                    <div class="form-actions">
-                        <button type="button" class="btn-secondary" id="cancel-btn">Cancel</button>
-                        <button type="submit" class="btn-primary">Add Subject</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <button class="floating-btn" id="add-subject-btn">
-            <i class="fas fa-plus"></i>
-        </button>
-    </section>
-
-    <script src="script.js"></script>
-</body>
+            <!-- Course Subjects -->
+            <h4>My Course Subjects</h4>
+    
+    
             
             <!-- Action buttons -->
             <div style="text-align: center; margin-top: 25px;">

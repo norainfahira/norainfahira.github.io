@@ -399,7 +399,7 @@
 .subject-list li:nth-child(3) a:hover,
 .subject-list li:nth-child(4) a:hover,
 .subject-list li:nth-child(5) a:hover,
-.subject-list li:nth-child(5) a:hover {
+.subject-list li:nth-child(6) a:hover {
     color: white; /* Text putih bila hover */
 }
 
@@ -434,14 +434,20 @@
 
 .grid-minimal .box:nth-child(7) {
     grid-column: span 3;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
     width: 100%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     min-height: 160px;
+    align-items: center;
+    border-left: 5px solid #ff8a9d;
+    cursor: pointer;
+    transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     text-align: center;
-    border-left: 5px solid #ff8a9d;
 }
 
 .box:hover {
@@ -563,6 +569,7 @@
         li {
             margin-bottom: 5px;
         }
+      
     </style>
 </head>
 <body>
@@ -691,6 +698,7 @@
               
                 <div class="box" onclick="goToSection('extra-details')">
                     <strong>Extra Activity</strong><br>
+                    
                 </div>
             </div>
             

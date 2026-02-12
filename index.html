@@ -227,6 +227,117 @@
             border-left: 4px solid #4d7cff; /* Border kiri biru */
         }
 
+      /* ========== FOLDER SEMESTER 1 STYLING ========== */
+.semester-folder {
+    margin: 30px 0 20px 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(30, 60, 114, 0.15);
+}
+
+.folder-btn {
+    width: 100%;
+    padding: 18px 25px;
+    background: linear-gradient(135deg, #1e3c72, #2a5298); /* Biru gradient sama macam header */
+    color: white;
+    border: none;
+    text-align: left;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+}
+
+.folder-btn:hover {
+    background: linear-gradient(135deg, #2a5298, #1e3c72);
+    padding-left: 30px; /* Effect gerak sikit ke kanan */
+}
+
+.folder-icon {
+    font-size: 28px;
+}
+
+.arrow {
+    margin-left: auto;
+    transition: transform 0.3s;
+    font-size: 20px;
+}
+
+.semester-content {
+    display: none;
+    padding: 25px;
+    background: #f8fbff;
+    border: 1px solid #cce0ff;
+    border-top: none;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.semester-content.show {
+    display: block;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.subject-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 12px;
+}
+
+.subject-list li {
+    margin: 0;
+}
+
+.subject-list a {
+    display: block;
+    padding: 14px 18px;
+    background: white;
+    color: #1e3c72;
+    text-decoration: none;
+    border-radius: 8px;
+    border: 1px solid #d4e3ff;
+    font-weight: 500;
+    transition: all 0.25s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.subject-list a:hover {
+    background: #1e3c72;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(30, 60, 114, 0.25);
+    border-color: #1e3c72;
+}
+
+/* Responsive untuk mobile */
+@media (max-width: 768px) {
+    .subject-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .folder-btn {
+        font-size: 1.1rem;
+        padding: 15px 20px;
+    }
+}
+
         /* ========== TAMBAH CSS UNTUK GRID KOTAK ========== */
         .grid-minimal {
             display: grid;
@@ -497,6 +608,25 @@
         </main>
     </div>
 
+  <!-- ========== FOLDER SEMESTER 1 ========== -->
+  
+  <div class="semester-folder">
+      <button class="folder-btn" onclick="toggleSemester()">
+          <span class="folder-icon">📁</span> SEMESTER 1
+          <span class="arrow">▼</span>
+      </button>
+      <div id="semesterContent" class="semester-content">
+            <ul class="subject-list">
+                <li><a href="#" onclick="goToSection('secp1513-details'); return false;">SECP1513 - Technology and Information System</a></li>
+                <li><a href="#" onclick="goToSection('secr1013-details'); return false;">SECR1013 - Digital Logic</a></li>
+                <li><a href="#" onclick="goToSection('seci1013-details'); return false;">SECI1013 - Discrete Structure</a></li>
+                <li><a href="#" onclick="goToSection('secj1013-details'); return false;">SECJ1013 - Programming Technique I</a></li>
+                <li><a href="#" onclick="goToSection('ulrs1032-details'); return false;">ULRS1032 - Integrity & Anti-Corruption</a></li>
+                <li><a href="#" onclick="goToSection('extra-details'); return false;">Extra Activity</a></li>
+            </ul>
+        </div>
+    </div>
+  
     <!-- ====== SUBJECT SECTIONS ===== -->
   
     <!-- SECP1513 Details -->
@@ -845,6 +975,22 @@
             // Update sync status
             document.getElementById('sync-status').innerHTML = `Status: <strong>Synced dengan GitHub</strong> (Last update: ${new Date().toLocaleTimeString()})`;
         }
+
+// ========== FUNCTION UNTUK TOGGLE FOLDER SEMESTER 1 ==========
+function toggleSemester() {
+    const content = document.getElementById('semesterContent');
+    const arrow = document.querySelector('.arrow');
+    
+    content.classList.toggle('show');
+    
+    if (content.classList.contains('show')) {
+        arrow.innerHTML = '▲';  // Arrow pointing up
+        arrow.style.transform = 'rotate(0deg)';
+    } else {
+        arrow.innerHTML = '▼';  // Arrow pointing down
+        arrow.style.transform = 'rotate(0deg)';
+    }
+}
         
         // ========== FUNCTIONS UNTUK SUBJECT NAVIGATION ==========
         // Function untuk pergi ke section

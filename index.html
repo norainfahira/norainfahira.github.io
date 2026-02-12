@@ -404,19 +404,25 @@
 }
 
 /* ========== TAMBAH CSS UNTUK GRID KOTAK YANG KAT ON-GOING SUBJECT ========== */
+/* ========== 3 + 3 + 1 (panjang == 3) ========== */
 .grid-minimal {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr); /* 3 column */
   gap: 20px;
   margin: 20px 0;
 }
 
-.box {
+.grid-minimal .box:nth-child(1),
+.grid-minimal .box:nth-child(2),
+.grid-minimal .box:nth-child(3),
+.grid-minimal .box:nth-child(4),
+.grid-minimal .box:nth-child(5),
+.grid-minimal .box:nth-child(6) {
   background: white;
   padding: 25px;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  min-height: 180px;
+  min-height: 160px;
   border-left: 5px solid #4d7cff;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -424,6 +430,17 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
+}
+
+.grid-minimal .box:nth-child(7) {
+    grid-column: span 3;  /* Ambil 3 column sekali gus - JADI PANJANG LEBAR */
+    width: 100%;
+    min-height: 160px;    /* Tinggi SAMA dengan kotak lain! */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .box:hover {
@@ -439,11 +456,17 @@
 .box:nth-child(4) { border-left-color: #f2bac9; } /*soft pink*/
 .box:nth-child(5) { border-left-color: #deb68a; } /*soft chocolate*/
 .box:nth-child(6) { border-left-color: #f2e2ba; } /*soft orange*/
+.box:nth-child(7) { border-left-color: #c8c7d6; } /*soft grey*/
 
+/* Responsive untuk mobile */
 @media (max-width: 768px) {
-  .grid-minimal {
-    grid-template-columns: 1fr;
-  }
+    .grid-minimal {
+        grid-template-columns: 1fr;
+    }
+    
+    .grid-minimal .box:nth-child(7) {
+        grid-column: span 1;  /* Kembali ke 1 column untuk mobile */
+    }
 }
 
         /* ========== TAMBAH CSS UNTUK SUBJECT SECTIONS ========== */
@@ -632,34 +655,39 @@
                 </li>
             </ul>
 
-            <!-- Course Subjects -->
-            <h2>My Course Subjects</h2>
+          <!-- On-going Course Subjects -->
+          <h2>My Course Subjects</h2>
             <div class="grid-minimal">
-                <div class="box" onclick="goToSection('secp1513-details')">
-                    <strong>SECP1513</strong><br>
-                    Technology and Information System (WBL)
+                <div class="box" onclick="goToSection('secp2613-details')">
+                    <strong>SECP2613</strong><br>
+                    System Analysis and Design (WBL)
                 </div>
                 
-                <div class="box" onclick="goToSection('secr1013-details')">
-                    <strong>SECR1013</strong><br>
-                    Digital Logic
+                <div class="box" onclick="goToSection('secr1033-details')">
+                    <strong>SECR1033</strong><br>
+                    Computer Organization and Architecture
                 </div>
                 
-                <div class="box" onclick="goToSection('seci1013-details')">
-                    <strong>SECI1013</strong><br>
-                    Discrete Structure
+                <div class="box" onclick="goToSection('seci1143-details')">
+                    <strong>SECI1143</strong><br>
+                    Probability and Statistical Data Analysis
                 </div>
                 
-                <div class="box" onclick="goToSection('secj1013-details')">
-                    <strong>SECJ1013</strong><br>
-                    Programming Technique I
+                <div class="box" onclick="goToSection('secj1023-details')">
+                    <strong>SECJ1023</strong><br>
+                    Programming Technique II
                 </div>
                 
-                <div class="box" onclick="goToSection('ulrs1032-details')">
-                    <strong>ULRS1032</strong><br>
-                    Integrity and Anti-Corruption Course
+                <div class="box" onclick="goToSection('secv2113-details')">
+                    <strong>SECV2113</strong><br>
+                    Human Computer Interaction
                 </div>
 
+                <div class="box" onclick="goToSection('uhms1182-details')">
+                    <strong>UHMS1182</strong><br>
+                    Appreciation of Ethics and Civilisation
+                </div>
+              
                 <div class="box" onclick="goToSection('extra-details')">
                     <strong>Extra Activity</strong><br>
                 </div>
@@ -692,7 +720,7 @@
         </div>
     </div>
   
-    <!-- ====== SUBJECT SECTIONS ===== -->
+    <!-- ====== SEMESTER 1 2025/2026 SUBJECT SECTIONS ===== -->
   
     <!-- SECP1513 Details -->
     <section id="secp1513-details" class="subject-section">

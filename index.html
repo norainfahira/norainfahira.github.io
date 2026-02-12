@@ -1098,19 +1098,17 @@
             document.getElementById('sync-status').innerHTML = `Status: <strong>Synced dengan GitHub</strong> (Last update: ${new Date().toLocaleTimeString()})`;
         }
 
-// ========== FUNCTION UNTUK TOGGLE FOLDER SEMESTER 1 ==========
-function toggleSemester() {
-    const content = document.getElementById('semesterContent');
-    const arrow = document.querySelector('.arrow');
+// ========== FUNCTION UNTUK TOGGLE SEMUA FOLDER ==========
+function toggleSemester(contentId, arrowId) {
+    const content = document.getElementById(contentId);
+    const arrow = document.getElementById(arrowId);
     
     content.classList.toggle('show');
     
     if (content.classList.contains('show')) {
-        arrow.innerHTML = '▲';  // Arrow pointing up
-        arrow.style.transform = 'rotate(0deg)';
+        arrow.innerHTML = '▲';
     } else {
-        arrow.innerHTML = '▼';  // Arrow pointing down
-        arrow.style.transform = 'rotate(0deg)';
+        arrow.innerHTML = '▼';
     }
 }
         

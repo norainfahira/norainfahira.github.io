@@ -74,6 +74,23 @@ h1 {
     margin: 0 auto 20px;
 }
 
+/* Profile header */
+.profile-header {
+    margin-bottom: 5px;
+}
+
+#user-tagline {
+    font-size: 0.95rem;
+    color: #2a5298;
+    font-style: italic;
+    margin-top: 2px;        /* rapat dengan nama */
+    margin-bottom: 20px;     /* jarak selesa dengan bio */
+}
+
+#github-bio {
+    margin-top: 0;
+}
+
 /* ========== GITHUB SYNC INFO ========== */
 .github-sync {
     background-color: #e6f2ff;

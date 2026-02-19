@@ -618,24 +618,35 @@
                 <a href="https://www.linkedin.com/in/norainfahira/"><i class="fab fa-linkedin"></i></a>
             </div> 
 
-            <!-- QUOTES SECTION -->
+            <!-- QUOTES SECTION with DATE + DAILY QUOTE -->
             <div style="margin-top: 25px; padding: 15px; background: #f8fbff; border-radius: 10px; border-left: 4px solid #2a5298;">
+    
+              <!-- DATE LINE -->
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 1px dashed #cce0ff;">
+                 <i class="fas fa-calendar-alt" style="color: #2a5298;"></i>
+                <span id="current-day" style="font-weight: 500; color: #1e3c72;"></span>
+              </div>
+
+              <!-- QUOTE HEADER -->
               <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
                 <i class="fas fa-quote-right" style="color: #2a5298;"></i>
-                <span style="font-weight: bold; color: #1e3c72;">✨ quote of the day</span>
+                 <span style="font-weight: bold; color: #1e3c72;">✨ quote of the day</span>
               </div>
-              <p style="margin: 0; font-style: italic;">"The only way to do great work is to love what you do."</p>
-              <p style="margin-top: 8px; text-align: right; font-size: 0.85rem; color: #2a5298;">— Steve Jobs</p>
-            </div>
 
-            <!-- LYRICS SECTION -->
+              <!-- QUOTE TEXT (dynamic) -->
+              <p id="daily-quote" style="margin: 0; font-style: italic;"></p>
+              <p id="quote-author" style="margin-top: 8px; text-align: right; font-size: 0.85rem; color: #2a5298;"></p>
+            
+            </div>
+          
+            <!-- LYRICS SECTION (dynamic) -->
             <div style="margin-top: 20px; padding: 15px; background: #ffffff; border-radius: 10px; border: 1px solid #d4e3ff;">
               <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
                 <i class="fas fa-headphones" style="color: #2a5298;"></i>
-                 <span style="font-weight: bold; color: #1e3c72;">🎶 now spinning</span>
+                <span style="font-weight: bold; color: #1e3c72;">🎶 now spinning</span>
               </div>
-              <p style="margin: 0; font-style: italic;">"Lirik lagu kau letak sini"</p>
-              <p style="margin-top: 8px; text-align: right; font-size: 0.85rem; color: #4d7cff;">— Nama Penyanyi</p>
+              <p id="daily-lyric" style="margin: 0; font-style: italic;"></p>
+              <p id="lyric-artist" style="margin-top: 8px; text-align: right; font-size: 0.85rem; color: #4d7cff;"></p>
             </div>
           
         </aside>
@@ -1159,7 +1170,54 @@ function toggleSemester(contentId, arrowId) {
             // Scroll ke atas
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-        
+
+      // ========== DAILY QUOTE & LYRIC ==========
+      function updateDailyContent() {
+      // ===== QUOTES =====
+      const quotes = [
+        { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+        { text: "Code is like humor. When you have to explain it, it’s bad.", author: "Cory House" },
+        { text: "First, solve the problem. Then, write the code.", author: "John Johnson" },
+        { text: "It's not a bug; it's an undocumented feature.", author: "Anonymous" },
+        { text: "Make it work, make it right, make it fast.", author: "Kent Beck" },
+        { text: "Programming isn't about what you know; it's about what you can figure out.", author: "Chris Pine" },
+        { text: "Simplicity is the soul of efficiency.", author: "Austin Freeman" },
+        { text: "Your limitation—it's only your imagination.", author: "Unknown" }
+      ];
+
+      // ===== LYRICS =====
+      const lyrics = [
+        { text: "We don't need to fall in love, we don't need to fall apart", artist: "Pastel Ghost" },
+        { text: "I'm still standing better than I ever did", artist: "Elton John" },
+        { text: "And I will always love you", artist: "Whitney Houston" },
+        { text: "Somewhere over the rainbow, way up high", artist: "Israel Kamakawiwoʻole" },
+        { text: "Cause I'm yours, I'm yours", artist: "Jason Mraz" },
+        { text: "Counting stars, one, two, three", artist: "OneRepublic" },
+        { text: "We don't talk anymore, we don't talk anymore", artist: "Charlie Puth" },
+        { text: "Hello from the other side", artist: "Adele" }
+      ];
+
+      // Dapatkan tarikh hari ini (untuk pilih quote yang sama sepanjang hari)
+      const today = new Date();
+      const day = today.getDate();
+      const month = today.getMonth();
+      const year = today.getFullYear();
+
+      // Format hari & tarikh
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      document.getElementById('current-day').innerText = today.toLocaleDateString('en-MY', options);
+
+      // Pilih quote berdasarkan tarikh (supaya sama setiap hari)
+       const quoteIndex = (day + month + year) % quotes.length;
+      document.getElementById('daily-quote').innerText = `"${quotes[quoteIndex].text}"`;
+      document.getElementById('quote-author').innerText = `— ${quotes[quoteIndex].author}`;
+
+      // Pilih lirik berdasarkan tarikh (atau nak random?)
+      const lyricIndex = (day + month + year + 3) % lyrics.length; // +3 supaya tak sama dengan quote
+      document.getElementById('daily-lyric').innerText = `"${lyrics[lyricIndex].text}"`;
+      document.getElementById('lyric-artist').innerText = `— ${lyrics[lyricIndex].artist}`;
+      }
+      
         // Function untuk initialize website
         function initWebsite() {
             // Set current date di footer
@@ -1170,6 +1228,9 @@ function toggleSemester(contentId, arrowId) {
             
             // Setup contact button
             document.getElementById('contact-btn').href = "mailto:norainfahira@gmail.com";
+       
+            // PANGGIL FUNCTION QUOTE & LYRIC
+            updateDailyContent();   // ← TAMBAH SINI
         }
         
         window.onload = initWebsite;

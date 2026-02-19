@@ -11,559 +11,8 @@
     <title>My Personal Website - GitHub Sync</title>
     <!-- Link untuk font awesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-   
-    <style>
-        * {
-            box-sizing: border-box; /* Pastikan padding tak ubah width */
-            margin: 0;
-            padding: 0;
-        }
-        
-        /* Setting untuk seluruh body */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6; /* Jarak antara baris */
-            color: #333; /* Warna text hitam kelabu */
-            background-color: #f0f8ff; /* light blue */
-            max-width: 1200px; /* Maximum width untuk desktop */
-            margin: 0 auto; /* Center kan website */
-            padding: 20px; /* Padding sekeliling */
-        }
-        
-        /* style header */
-        header {
-            background: linear-gradient(135deg, #1e3c72, #2a5298); /* Gradient biru */
-            color: white;
-            padding: 30px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(30, 60, 114, 0.2); /* Bayang untuk 3D */
-        }
-        
-        h1 {
-            font-size: 2.8rem; /* Saiz font besar untuk tajuk */
-            margin-bottom: 10px; /* Ruang bawah tajuk */
-        }
-        
-        .tagline {
-            font-size: 1.2rem; /* Saiz untuk tagline */
-            opacity: 0.9; /* Sedikit transparent */
-        }
-        
-        .container {
-            display: flex; /* Flexbox untuk layout dua column */
-            flex-wrap: wrap; /* Boleh wrap kalau screen kecil */
-            gap: 30px; /* Jarak antara sidebar dan main content */
-            margin-bottom: 30px;
-        }
-        
-        .sidebar {
-            flex: 1; /* Ambil 1 bahagian dari flex container */
-            min-width: 300px; /* Minimum width sebelum wrap */
-            background-color: white;
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 4px 8px rgba(0, 0, 100, 0.1); /* Bayang biru */
-        }
-        
-        /*Main Content*/
-        .main-content {
-            flex: 2; /* Ambil 2 bahagian (lebih besar dari sidebar) */
-            min-width: 300px;
-            background-color: white;
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 4px 8px rgba(0, 0, 100, 0.1);
-        }
-        
-        /*Gambar*/
-        .profile-pic {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%; /* Buat bulat */
-            object-fit: cover; /* Pastikan gambar tak stretch */
-            border: 5px solid #4d7cff; /* Border biru */
-            display: block; /* Supaya boleh margin auto */
-            margin: 0 auto 20px; /* Center kan dan beri margin bawah */
-        }
-        
-        /* info sync with GitHub */
-        .github-sync {
-            background-color: #e6f2ff; /* Biru muda */
-            padding: 15px;
-            border-radius: 8px;
-            margin: 20px 0;
-            border-left: 5px solid #2a5298; /* Border kiri biru */
-        }
-        
-        .github-stats {
-            display: flex; /* Flexbox untuk stats */
-            justify-content: space-around; /* Sebarkan sama rata */
-            flex-wrap: nowrap; /* PAKSA tak boleh wrap */
-            gap: 8px;
-            margin-top: 20px;
-        }
-        
-        .stat {
-            text-align: center;
-            padding: 15px;
-            background-color: #f8fbff; /* Biru sangat muda */
-            border-radius: 8px;
-            min-width: 0;        /* benarkan mengecil */
-            flex: 1;             /* ambil ruang sama rata */
-            margin: 0 4px;
-            border: 1px solid #cce0ff;
-        }
-        
-        .stat-value {
-            font-size: 1.8rem; /* Saiz besar untuk nombor */
-            font-weight: bold;
-            color: #1e3c72; /* Warna biru gelap */
-        }
-        
-        /* README */
-        .readme-section {
-            background-color: #f8fbff; /* Biru sangat muda */
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 25px;
-            border: 1px dashed #4d7cff; /* Border putus-putus biru */
-        }
-        
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #1e3c72; /* Biru gelap */
-            color: white;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-        
-        /* links */
-        a {
-            color: #2a5298; /* Warna biru untuk link */
-            text-decoration: none; /* Buang underline default */
-            font-weight: bold;
-        }
-        
-        a:hover {
-            color: #1e3c72; /* Warna biru lebih gelap ketika hover */
-            text-decoration: underline; /* Tambah underline ketika hover */
-        }
-        
-        /* buttons */
-        .btn {
-            display: inline-block; /* Supaya boleh set width dan padding */
-            background-color: #4d7cff; /* Biru */
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            margin: 5px;
-            text-align: center;
-            transition: background-color 0.3s; /* Animasi smooth untuk hover */
-        }
-        
-        .btn:hover {
-            background-color: #2a5298; /* Biru lebih gelap ketika hover */
-            text-decoration: none; /* Jangan ada underline */
-        }
-    
-        .social-icons {
-            display: flex; /* Flexbox untuk align icons */
-            justify-content: center; /* Center kan icons */
-            margin-top: 20px;
-            gap: 15px; /* Jarak antara icons */
-        }
-        
-        .social-icons a {
-            font-size: 1.5rem; /* Saiz icon besar sikit */
-            color: #2a5298;
-            transition: color 0.3s; /* Animasi smooth untuk hover */
-        }
-        
-        .social-icons a:hover {
-            color: #1e3c72;
-        }
-        
-        /* header untuk section */
-        h2 {
-            color: #1e3c72; /* Biru gelap */
-            margin-bottom: 15px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #e6f2ff; /* Garis bawah biru muda */
-        }
-        
-        h3 {
-            color: #2a5298; /* Biru */
-            margin: 15px 0 10px 0;
-        }
-
-        h4 { /*belum guna*/
-            color: #2a5298; /* Biru */
-            margin: 15px 0 10px 0;
-        }
-        
-        /* responsive design */
-        @media (max-width: 768px) {
-            /* Untuk mobile devices */
-            .container {
-                flex-direction: column; /* Susun atas bawah, bukan kiri kanan */
-            }
-            
-            h1 {
-                font-size: 2.2rem; /* Kurangkan saiz font untuk mobile */
-            }
-            
-            .sidebar, .main-content {
-                width: 100%; /* Ambil full width untuk mobile */
-            }
-        }
-        
-        .student-note {
-            background-color: #f8fbff;
-            padding: 10px;
-            border-radius: 5px;
-            margin: 10px 0;
-            font-size: 0.9rem; /* Saiz font kecil sikit */
-            border-left: 4px solid #1e3c72;
-        }
-
-/* ========== FOLDER SEMESTER 1 STYLING ========== */
-.semester-folder {
-    margin: 30px 0 20px 0;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(30, 60, 114, 0.15);
-}
-
-.folder-btn {
-    width: 100%;
-    padding: 18px 25px;
-    background: linear-gradient(135deg, #1e3c72, #2a5298); /* Biru gradient sama macam header */
-    color: white;
-    border: none;
-    text-align: left;
-    font-size: 1.3rem;
-    font-weight: bold;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    transition: all 0.3s ease;
-}
-
-.folder-btn:hover {
-    background: linear-gradient(135deg, #2a5298, #1e3c72);
-    padding-left: 30px; /* Effect gerak sikit ke kanan */
-}
-
-.folder-icon {
-    font-size: 28px;
-}
-
-.arrow {
-    margin-left: auto;
-    transition: transform 0.3s;
-    font-size: 20px;
-}
-
-.semester-content {
-    display: none;
-    padding: 25px;
-    background: #f8fbff;
-    border: 1px solid #cce0ff;
-    border-top: none;
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
-}
-
-.semester-content.show {
-    display: block;
-    animation: slideDown 0.3s ease;
-}
-
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.subject-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 12px;
-}
-
-.subject-list li {
-    margin: 0;
-}
-
-.subject-list a {
-    display: block;
-    padding: 14px 18px;
-    background: white;
-    color: #1e3c72;
-    text-decoration: none;
-    border-radius: 8px;
-    border: 1px solid #d4e3ff;
-    font-weight: 500;
-    transition: all 0.25s;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-}
-
-.subject-list a:hover {
-    /* background: #1e3c72;
-    color: white; */
-    transform: translateY(-3px);
-    box-shadow: 0 8px 18px rgba(30, 60, 114, 0.25);
-    border-color: #1e3c72;
-}
-
-/* Responsive untuk mobile */
-@media (max-width: 768px) {
-    .subject-list {
-        grid-template-columns: 1fr;
-    }
-    
-    .folder-btn {
-        font-size: 1.1rem;
-        padding: 15px 20px;
-    }
-}
-
-/* ========== WARNA TEPI UNTUK SUBJEK DALAM FOLDER SEMESTER 1 ========== */
-.subject-list li:nth-child(1) a { border-left: 5px solid #e74c3c !important ; } /* Merah - SECP1513 */
-.subject-list li:nth-child(2) a { border-left: 5px solid #2ecc71 !important ; } /* Hijau - SECR1013 */
-.subject-list li:nth-child(3) a { border-left: 5px solid #f39c12 !important ; } /* Oren - SECI1013 */
-.subject-list li:nth-child(4) a { border-left: 5px solid #9b59b6 !important ; } /* Ungu - SECJ1013 */
-.subject-list li:nth-child(5) a { border-left: 5px solid #1abc9c !important ; } /* Turquoise - ULRS1032 */
-.subject-list li:nth-child(6) a { border-left: 5px solid #ff8a9d !important ; } /* Pink - Extra Activity */
-
-/* Hover effect dengan warna yang sama untuk sem 1
-.subject-list li:nth-child(1) a:hover { background: #e74c3c !important ; border-left-color: #c0392b !important ; }
-.subject-list li:nth-child(2) a:hover { background: #2ecc71 !important ; border-left-color: #27ae60 !important ; }
-.subject-list li:nth-child(3) a:hover { background: #f39c12 !important ; border-left-color: #e67e22 !important ; }
-.subject-list li:nth-child(4) a:hover { background: #9b59b6 !important ; border-left-color: #8e44ad !important ; }
-.subject-list li:nth-child(5) a:hover { background: #1abc9c !important ; border-left-color: #16a085 !important ; }
-.subject-list li:nth-child(6) a:hover { background: #ff8a9d !important ; border-left-color: #ff6b81 !important ; }
-*/
-      
-/* Text putih bila hover
-.subject-list li:nth-child(1) a:hover,
-.subject-list li:nth-child(2) a:hover,
-.subject-list li:nth-child(3) a:hover,
-.subject-list li:nth-child(4) a:hover,
-.subject-list li:nth-child(5) a:hover,
-.subject-list li:nth-child(6) a:hover {
-    color: white;
-} */
-      
-/* ========== WARNA TEPI UNTUK SUBJEK DALAM FOLDER SEMESTER 2 ========== */
-.subject-list li:nth-child(1) a { border-left: 5px solid #e74c3c !important ; } /* Merah - SECJ2013 */
-.subject-list li:nth-child(2) a { border-left: 5px solid #2ecc71 !important ; } /* Hijau - SECV2113 */
-.subject-list li:nth-child(3) a { border-left: 5px solid #f39c12 !important ; } /* Oren - SECS2043 */
-.subject-list li:nth-child(4) a { border-left: 5px solid #9b59b6 !important ; } /* Ungu - SECV2813 */
-.subject-list li:nth-child(5) a { border-left: 5px solid #1abc9c !important ; } /* Turquoise - SECS2833 */
-.subject-list li:nth-child(6) a { border-left: 5px solid #3498db !important ; } /* Biru - ULRS2122 */
-.subject-list li:nth-child(7) a { border-left: 5px solid #ff8a9d !important ; } /* Pink - Extra Activity */
-
-/* Hover effect SEM 2
-.subject-list li:nth-child(1) a:hover { background: #e74c3c !important ; }
-.subject-list li:nth-child(2) a:hover { background: #2ecc71 !important ; }
-.subject-list li:nth-child(3) a:hover { background: #f39c12 !important ; }
-.subject-list li:nth-child(4) a:hover { background: #9b59b6 !important ; }
-.subject-list li:nth-child(5) a:hover { background: #1abc9c !important ; }
-.subject-list li:nth-child(6) a:hover { background: #3498db !important ; }
-.subject-list li:nth-child(7) a:hover { background: #ff8a9d !important ; }
-
-.subject-list li:nth-child(1) a:hover,
-.subject-list li:nth-child(2) a:hover,
-.subject-list li:nth-child(3) a:hover,
-.subject-list li:nth-child(4) a:hover,
-.subject-list li:nth-child(5) a:hover,
-.subject-list li:nth-child(6) a:hover,
-.subject-list li:nth-child(7) a:hover {
-    color: white;
-}  */
-      
-
-/* ========== TAMBAH CSS UNTUK GRID KOTAK YANG KAT ON-GOING SUBJECT ========== */
-/* ========== 3 + 3 + 1 (panjang == 3) ========== */
-.grid-minimal {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 column */
-  gap: 20px;
-  margin: 20px 0;
-}
-
-.grid-minimal .box:nth-child(1),
-.grid-minimal .box:nth-child(2),
-.grid-minimal .box:nth-child(3),
-.grid-minimal .box:nth-child(4),
-.grid-minimal .box:nth-child(5),
-.grid-minimal .box:nth-child(6) {
-  background: white;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  min-height: 160px;
-  border-left: 5px solid #4d7cff;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-}
-
-.grid-minimal .box:nth-child(7) {
-    grid-column: span 3;
-    background: white;
-    padding: 25px;
-    border-radius: 10px;
-    width: 100%;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    min-height: 160px;
-    align-items: center;
-    border-left: 5px solid #ff8a9d;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-}
-
-.box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-  background: #f0f8ff;
-        }
-
-/* Warna berbeza untuk setiap kotak */
-.grid-minimal .box:nth-child(1) { border-left-color: #e74c3c; } /*Merah - SECP2613*/
-.grid-minimal .box:nth-child(2) { border-left-color: #2ecc71; } /*Hijau - SECR1033*/
-.grid-minimal .box:nth-child(3) { border-left-color: #f39c12; } /*Oren - SECI1143*/
-.grid-minimal .box:nth-child(4) { border-left-color: #9b59b6; } /*Ungu - SECJ1023*/
-.grid-minimal .box:nth-child(5) { border-left-color: #1abc9c; } /*Turquoise - SECV2113*/
-.grid-minimal .box:nth-child(6) { border-left-color: #3498db; } /*Biru - UHMS1182*/
-.grid-minimal .box:nth-child(7) { border-left-color: #ff8a9d; } /*Pink - Extra Activity*/
-
-/* Responsive untuk mobile */
-@media (max-width: 768px) {
-    .grid-minimal {
-        grid-template-columns: 1fr;
-    }
-    
-    .grid-minimal .box:nth-child(7) {
-        grid-column: span 1;  /* Kembali ke 1 column untuk mobile */
-    }
-}
-
-        /* ========== TAMBAH CSS UNTUK SUBJECT SECTIONS ========== */
-        .subject-section {
-            display: none; /* Hidden by default */
-            min-height: 100vh;
-            padding: 40px;
-            background: white;
-            border-radius: 10px;
-            margin-top: 20px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-
-        .back-button {
-            display: inline-block;
-            background: #4d7cff;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 5px;
-            text-decoration: none;
-            margin-bottom: 20px;
-            cursor: pointer;
-            border: none;
-            font-size: 16px;
-            transition: background 0.3s;
-        }
-
-        .back-button:hover {
-            background: #2a5298;
-        }
-
-        .subject-content {
-            margin-top: 20px;
-        }
-
-        .subject-content h2 {
-            color: #1e3c72;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #e6f2ff;
-        }
-
-        .assignment-list {
-            background: #f8fbff;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-            border-left: 4px solid #2a5298;
-        }
-
-        .assignment-item {
-            background: white;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 10px 0;
-            border-left: 3px solid #4d7cff;
-        }
-
-        .assignment-title {
-            font-weight: bold;
-            color: #1e3c72;
-            margin-bottom: 5px;
-        }
-
-        .assignment-status {
-            display: inline-block;
-            padding: 3px 10px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            margin-left: 10px;
-        }
-
-        .status-completed {
-            background: #d4edda;
-            color: #155724;
-        }
-
-        .status-pending {
-            background: #fff3cd;
-            color: #856404;
-        }
-
-        .status-inprogress {
-            background: #cce5ff;
-            color: #004085;
-        }
-
-        /* for list indent */       
-        ul, ol {
-            padding-left: 20px;
-        }
-
-        li {
-            margin-bottom: 5px;
-        }
-      
-    </style>
+    <!-- Link ke CSS external -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- header -->
@@ -624,34 +73,32 @@
             <!-- QUOTES SECTION with DATE + DAILY QUOTE -->
             <div style="margin-top: 25px; padding: 15px; background: #f8fbff; border-radius: 10px; border-left: 4px solid #2a5298;">
     
-              <!-- DATE LINE -->
-              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 1px dashed #cce0ff;">
-                 <i class="fas fa-calendar-alt" style="color: #2a5298;"></i>
-                 <span id="current-day" style="font-weight: 500; color: #1e3c72;"></span>
-              </div>
+                <!-- DATE LINE -->
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 1px dashed #cce0ff;">
+                    <i class="fas fa-calendar-alt" style="color: #2a5298;"></i>
+                    <span id="current-day" style="font-weight: 500; color: #1e3c72;"></span>
+                </div>
 
-              <!-- QUOTE HEADER -->
-              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
-                <i class="fas fa-quote-right" style="color: #2a5298;"></i>
-                 <span style="font-weight: bold; color: #1e3c72;">✨ quote of the day</span>
-              </div>
+                <!-- QUOTE HEADER -->
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+                    <i class="fas fa-quote-right" style="color: #2a5298;"></i>
+                    <span style="font-weight: bold; color: #1e3c72;">✨ quote of the day</span>
+                </div>
 
-              <!-- QUOTE TEXT (dynamic) -->
-              <p id="daily-quote" style="margin: 0; font-style: italic;"></p>
-              <p id="quote-author" style="margin-top: 8px; text-align: right; font-size: 0.85rem; color: #2a5298;"></p>
-            
+                <!-- QUOTE TEXT (dynamic) -->
+                <p id="daily-quote" style="margin: 0; font-style: italic;"></p>
+                <p id="quote-author" style="margin-top: 8px; text-align: right; font-size: 0.85rem; color: #2a5298;"></p>
             </div>
           
             <!-- LYRICS SECTION (dynamic) -->
             <div style="margin-top: 20px; padding: 15px; background: #ffffff; border-radius: 10px; border: 1px solid #d4e3ff;">
-              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
-                <i class="fas fa-headphones" style="color: #2a5298;"></i>
-                <span style="font-weight: bold; color: #1e3c72;">🎶 now spinning</span>
-              </div>
-              <p id="daily-lyric" style="margin: 0; font-style: italic;"></p>
-              <p id="lyric-artist" style="margin-top: 8px; text-align: right; font-size: 0.85rem; color: #4d7cff;"></p>
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+                    <i class="fas fa-headphones" style="color: #2a5298;"></i>
+                    <span style="font-weight: bold; color: #1e3c72;">🎶 now spinning</span>
+                </div>
+                <p id="daily-lyric" style="margin: 0; font-style: italic;"></p>
+                <p id="lyric-artist" style="margin-top: 8px; text-align: right; font-size: 0.85rem; color: #4d7cff;"></p>
             </div>
-          
         </aside>
         
         <!-- main content -->
@@ -660,10 +107,10 @@
             <h2>About Me</h2>
             <p>Hey there !</p>
             <ul>
-              <li>👩‍💻 I'm a first-year Computer Science (Data Engineering) student.</li>
-              <li>🌱 Still new in programming and trying my best to improve.</li>
-              <li>🚀 I enjoy learning new things especially C++ and basic software tools. </li>
-              <li>💡 My goal is to build a strong foundation and grow step by step. </li>
+                <li>👩‍💻 I'm a first-year Computer Science (Data Engineering) student.</li>
+                <li>🌱 Still new in programming and trying my best to improve.</li>
+                <li>🚀 I enjoy learning new things especially C++ and basic software tools.</li>
+                <li>💡 My goal is to build a strong foundation and grow step by step.</li>
             </ul>
           
             <!-- Student note styling -->
@@ -691,8 +138,8 @@
                 </li>
             </ul>
 
-          <!-- On-going Course Subjects -->
-          <h2>My On-Going Course Subjects</h2>
+            <!-- On-going Course Subjects -->
+            <h2>My On-Going Course Subjects</h2>
             <div class="grid-minimal">
                 <div class="box" onclick="goToSection('secp2613-details')">
                     <strong>SECP2613</strong><br>
@@ -726,7 +173,6 @@
               
                 <div class="box" onclick="goToSection('extra2-details')">
                     <strong>Extra Activity</strong><br>
-                    
                 </div>
             </div>
             
@@ -738,42 +184,42 @@
         </main>
     </div>
 
-  <!-- ========== FOLDER SEMESTER 1 ========== -->
-<div class="semester-folder">
-    <button class="folder-btn" onclick="toggleSemester('semesterContent1', 'arrow1')">
-        <span class="folder-icon">📁</span> SEMESTER 1
-        <span id="arrow1" class="arrow">▼</span>
-    </button>
-    <div id="semesterContent1" class="semester-content">
-        <ul class="subject-list">
-            <li><a href="#" onclick="goToSection('secp1513-details'); return false;">SECP1513 - Technology and Information System (WBL)</a></li>
-            <li><a href="#" onclick="goToSection('secr1013-details'); return false;">SECR1013 - Digital Logic</a></li>
-            <li><a href="#" onclick="goToSection('seci1013-details'); return false;">SECI1013 - Discrete Structure</a></li>
-            <li><a href="#" onclick="goToSection('secj1013-details'); return false;">SECJ1013 - Programming Technique I</a></li>
-            <li><a href="#" onclick="goToSection('ulrs1032-details'); return false;">ULRS1032 - Integrity & Anti-Corruption</a></li>
-            <li><a href="#" onclick="goToSection('extra1-details'); return false;">Extra Activity</a></li>
-        </ul>
+    <!-- ========== FOLDER SEMESTER 1 ========== -->
+    <div class="semester-folder">
+        <button class="folder-btn" onclick="toggleSemester('semesterContent1', 'arrow1')">
+            <span class="folder-icon">📁</span> SEMESTER 1
+            <span id="arrow1" class="arrow">▼</span>
+        </button>
+        <div id="semesterContent1" class="semester-content">
+            <ul class="subject-list">
+                <li><a href="#" onclick="goToSection('secp1513-details'); return false;">SECP1513 - Technology and Information System (WBL)</a></li>
+                <li><a href="#" onclick="goToSection('secr1013-details'); return false;">SECR1013 - Digital Logic</a></li>
+                <li><a href="#" onclick="goToSection('seci1013-details'); return false;">SECI1013 - Discrete Structure</a></li>
+                <li><a href="#" onclick="goToSection('secj1013-details'); return false;">SECJ1013 - Programming Technique I</a></li>
+                <li><a href="#" onclick="goToSection('ulrs1032-details'); return false;">ULRS1032 - Integrity & Anti-Corruption</a></li>
+                <li><a href="#" onclick="goToSection('extra1-details'); return false;">Extra Activity</a></li>
+            </ul>
+        </div>
     </div>
-</div>
 
-<!-- ========== FOLDER SEMESTER 2 ========== -->
-<div class="semester-folder">
-    <button class="folder-btn" onclick="toggleSemester('semesterContent2', 'arrow2')">
-        <span class="folder-icon">📁</span> SEMESTER 2
-        <span id="arrow2" class="arrow">▼</span>
-    </button>
-    <div id="semesterContent2" class="semester-content">
-        <ul class="subject-list">
-            <li><a href="#" onclick="goToSection('secp2613-details'); return false;">SECP2613 - System Analysis and Design (WBL)</a></li>
-            <li><a href="#" onclick="goToSection('secr1033-details'); return false;">SECR1033 - Computer Organization and Architecture</a></li>
-            <li><a href="#" onclick="goToSection('seci1143-details'); return false;">SECI1143 - Probability and Statistical Data</a></li>
-            <li><a href="#" onclick="goToSection('secj1023-details'); return false;">SECJ1023 - Programming Technique II</a></li>
-            <li><a href="#" onclick="goToSection('secv2113-details'); return false;">SECV2113 - Human Computer Interaction</a></li>
-            <li><a href="#" onclick="goToSection('uhms1182-details'); return false;">UHMS1182 - Appreciation of Ethics and Civilisation</a></li>
-            <li><a href="#" onclick="goToSection('extra2-details'); return false;">Extra Activity</a></li>
-        </ul>
+    <!-- ========== FOLDER SEMESTER 2 ========== -->
+    <div class="semester-folder">
+        <button class="folder-btn" onclick="toggleSemester('semesterContent2', 'arrow2')">
+            <span class="folder-icon">📁</span> SEMESTER 2
+            <span id="arrow2" class="arrow">▼</span>
+        </button>
+        <div id="semesterContent2" class="semester-content">
+            <ul class="subject-list">
+                <li><a href="#" onclick="goToSection('secp2613-details'); return false;">SECP2613 - System Analysis and Design (WBL)</a></li>
+                <li><a href="#" onclick="goToSection('secr1033-details'); return false;">SECR1033 - Computer Organization and Architecture</a></li>
+                <li><a href="#" onclick="goToSection('seci1143-details'); return false;">SECI1143 - Probability and Statistical Data</a></li>
+                <li><a href="#" onclick="goToSection('secj1023-details'); return false;">SECJ1023 - Programming Technique II</a></li>
+                <li><a href="#" onclick="goToSection('secv2113-details'); return false;">SECV2113 - Human Computer Interaction</a></li>
+                <li><a href="#" onclick="goToSection('uhms1182-details'); return false;">UHMS1182 - Appreciation of Ethics and Civilisation</a></li>
+                <li><a href="#" onclick="goToSection('extra2-details'); return false;">Extra Activity</a></li>
+            </ul>
+        </div>
     </div>
-</div>
   
     <!-- ====== SEMESTER 1 2025/2026 SUBJECT SECTIONS ===== -->
   
@@ -782,7 +228,7 @@
         <button class="back-button" onclick="goBackHome()">← Back to Home</button>
         
         <div class="subject-content">
-            <h2>SECP1513 - Technology and Information System (WBL) </h2>
+            <h2>SECP1513 - Technology and Information System (WBL)</h2>
             <p><strong>Credit Hours :</strong> 3</p>
             <p><strong>Lecturer :</strong> Dr. Aryati binti Bakri</p>
             <p><strong>Section :</strong> 02</p>
@@ -794,9 +240,9 @@
             <div class="assignment-list">
                 <div class="assignment-item">
                     <div class="assignment-title">Assignment 1 : UTMDigital Open Day VLog <span class="assignment-status status-completed">Completed</span></div>
-                    <p>We had an oppurtunity went to the UTMDigital Open Day. </p>
+                    <p>We had an oppurtunity went to the UTMDigital Open Day.</p>
                     <p>The assignment given was producing a Vlog about the Digital Open Day.</p>
-                    <small><strong><a href="https://youtu.be/7AV84OL5UZw">Watch Here ! </a></strong></small>
+                    <small><strong><a href="https://youtu.be/7AV84OL5UZw">Watch Here !</a></strong></small>
                 </div>
                 
                 <div class="assignment-item">
@@ -806,7 +252,6 @@
                     <small><strong><a href="https://www.linkedin.com/posts/norainfahira_20-november-2025-attended-my-first-industry-activity-7411614849463443456-zWS-/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAGEt4xcBquA37jQeQ89B8c0BNgvdjXOYllU">Take a look on my LinkedIn post !</a></strong></small>
                     <p>We were given an assignment to create a poster on this industry talk.</p>
                     <small><strong><a href="https://github.com/user-attachments/files/24376773/Industry.Talk.1.Poster.pdf">Go here !</a></strong></small>
-                    
                 </div>
                 
                 <div class="assignment-item">
@@ -825,10 +270,9 @@
                     <div class="assignment-title">Reflection on Industry Talk 3 by Ms. Qaisara Rohzan<span class="assignment-status status-completed">Completed</span></div>
                     <p>This talk was conducted only for my section.</p>
                     <p>This is Dr. Aryati efforts for us to explore more about Microsoft Power BI.</p>
-                    <P>Big thanks to Dr. Aryati and Ms. Qaisara Rohzan fro this talk.</P>
+                    <p>Big thanks to Dr. Aryati and Ms. Qaisara Rohzan fro this talk.</p>
                     <small><strong><a href="https://www.linkedin.com/posts/norainfahira_on-14-january-2026-i-had-the-opportunity-activity-7421590668805865472-44MO?utm_source=share&utm_medium=member_desktop&rcm=ACoAAGEt4xcBquA37jQeQ89B8c0BNgvdjXOYllU">Take a look on my LinkedIn post !</a></strong></small>
                 </div>
-
             </div>
 
             <h3>Learning Outcomes</h3>
@@ -847,28 +291,28 @@
         
         <div class="subject-content">
             <h2>SECR1013 - Digital Logic</h2>
-            <p><strong>Credit Hours : </strong> 3</p>
-            <p><strong>Lecturer : </strong>Dr. Raja Zahilah binti Raja Mohd Radzi</p>
-            <p><strong>Section : </strong>03</p>
+            <p><strong>Credit Hours :</strong> 3</p>
+            <p><strong>Lecturer :</strong> Dr. Raja Zahilah binti Raja Mohd Radzi</p>
+            <p><strong>Section :</strong> 03</p>
             
             <h3>Course Description</h3>
             <p>This course introduces the fundamentals of digital electronics and digital logic, covering number systems, logic gates, Boolean algebra, and combinational and sequential circuits, with hands-on experience using simulation tools and real digital systems.</p>
             
             <h3>Lab Activities</h3>
             <div class="assignment-list">
-                    <div class="assignment-item">
+                <div class="assignment-item">
                     <div class="assignment-title">Lab 1 : Combinational Logic <span class="assignment-status status-completed">Completed</span></div>
                     <p><strong>Objectives</strong></p>
-                    <p>The objectives of this laboratory are to introduce students to : </p>
+                    <p>The objectives of this laboratory are to introduce students to :</p>
                     <ul>
                         <li>basic bread boarding and wiring techniques</li>
                         <li>the use of input switches and outputs LEDs in generating truth tables for a combinational logic circuit</li>
                         <li>to verify the characteristic of the basic gates</li>
                     </ul> 
                     <small><strong><a href="https://www.linkedin.com/posts/norainfahira_on-17-november-2025-i-had-a-hands-on-experience-activity-7411611562030993408-pN7x?utm_source=share&utm_medium=member_desktop&rcm=ACoAAGEt4xcBquA37jQeQ89B8c0BNgvdjXOYllU">See here !</a></strong></small>
-                    </div>
+                </div>
 
-                    <div class="assignment-item">
+                <div class="assignment-item">
                     <div class="assignment-title">Lab 2 : Combinational Digital Circuit Design Simulation using Deeds Simulator<span class="assignment-status status-completed">Completed</span></div>
                     <p><strong>Objectives</strong></p>
                     <p>To expose student with :</p>
@@ -876,9 +320,9 @@
                         <li>producing digital logic circuit, generating truth table and Timing Diagram with Deeds Simulator</li>
                         <li>a complete cycle process of combinational circuit design and simulate with Deeds Simulator</li>
                     </ul> 
-                    </div>
+                </div>
       
-                    <div class="assignment-item">
+                <div class="assignment-item">
                     <div class="assignment-title">Lab 3 : Synchronous Digital Counter<span class="assignment-status status-completed">Completed</span></div>
                     <p><strong>Objectives</strong></p>
                     <p>Student have to :</p>
@@ -888,14 +332,14 @@
                         <li>sketch the state diagram of the counter circuit</li>
                         <li>identify the properties of the counter</li>
                     </ul> 
-                    </div>
                 </div>
+            </div>
 
-                <h3>Projects</h3>
-                <div class="assignment-list">
-                    <div class="assignment-item">
+            <h3>Projects</h3>
+            <div class="assignment-list">
+                <div class="assignment-item">
                     <div class="assignment-title">Electronic Lift/Elevator Controller System (Simulation Using Deeds Software)<span class="assignment-status status-completed">Completed</span></div>
-                    <p><strong>Objectives</strong> </p>
+                    <p><strong>Objectives</strong></p>
                     <p>Students have to :</p>
                     <ul>
                         <li>design and implement a secure password-protected lift system</li>
@@ -905,8 +349,8 @@
                         <li>showcase the application of digital electronics principles in the context of lift</li>
                     </ul> 
                     <small><strong><a href="https://youtu.be/qi1j9YlNMSs?si=7HHUZ0qbjnpEYpXB">Watch Here !</a></strong></small>
-                    </div>
-                 </div>
+                </div>
+            </div>
       
             <h3>Learning Outcomes :</h3>
             <ul>
@@ -915,7 +359,6 @@
                 <li>Design simple combinational and sequential logic circuits</li>
                 <li>Use simulation tools and basic laboratory equipment to implement digital systems</li>
             </ul>
-          
         </div>
     </section>
 
@@ -925,9 +368,9 @@
         
         <div class="subject-content">
             <h2>SECI1013 - Discrete Structure</h2>
-            <p><strong>Credit Hours : </strong> 3</p>
-            <p><strong>Lecturer : </strong> Dr. Mohamad Syukor bin Talib</p>
-            <p><strong>Section : </strong> 03</p>
+            <p><strong>Credit Hours :</strong> 3</p>
+            <p><strong>Lecturer :</strong> Dr. Mohamad Syukor bin Talib</p>
+            <p><strong>Section :</strong> 03</p>
             
             <h3>Course Description</h3>
             <p>This course introduces the fundamental concepts of discrete structures in computer science, including set theory, relations, functions, counting methods, graph theory, trees, and finite automata.</p>
@@ -949,16 +392,15 @@
                 <div class="assignment-item">
                     <div class="assignment-title">Assignment 4 : Chapter 5 - Finite Automata <span class="assignment-status status-completed">Completed</span></div>
                 </div>
-             </div>
+            </div>
           
-          <h3>Learning Outcomes :</h3>
+            <h3>Learning Outcomes :</h3>
             <ul>
                 <li>Apply set theory, relations, and functions to solve computer science problems</li>
                 <li>Analyze and solve problems using recurrence relations and counting methods</li>
                 <li>Use graph theory and trees to model and solve real-world problems</li>
                 <li>Apply finite automata and finite state machines to model electronic devices and systems</li>
             </ul>
-          
         </div>
     </section>
 
@@ -991,11 +433,10 @@
                 <div class="assignment-item">
                     <div class="assignment-title">Assignment 3 <span class="assignment-status status-completed">Completed</span></div>
                 </div>
-              
-             </div>
+            </div>
           
-              <h3>Lab Exercises</h3>
-              <div class="assignment-list">
+            <h3>Lab Exercises</h3>
+            <div class="assignment-list">
                 <div class="assignment-item">
                     <div class="assignment-title">Lab Exercise 1 <span class="assignment-status status-completed">Completed</span></div>
                 </div>
@@ -1007,8 +448,7 @@
                 <div class="assignment-item">
                     <div class="assignment-title">Lab Exercise 3 <span class="assignment-status status-completed">Completed</span></div>
                 </div>
-                
-              </div>
+            </div>
         </div>
     </section>
 
@@ -1037,7 +477,6 @@
                     <p>We are given a task to produce a video regarding any corruption activity.</p>
                     <small><strong><a href="https://youtu.be/rqumlk5q8QA">Watch Here !</a></strong></small>
                 </div>
-              
             </div>
         </div>
     </section>
@@ -1048,28 +487,26 @@
         
         <div class="subject-content">
             <h2>Extra Activity</h2>
-    
             <p>All of my extra activities during Semester 1 2025/2026.</p>
             
             <h3>List of Activities</h3>
-                <div class="assignment-item">
-                    <div class="assignment-title">Festival of Ideas in Putrajaya </div>
-                    <p>The event was held on 5 November 2025 at Putrajaya International Convention Centre.</p>
-                    <small><strong><a href="https://www.linkedin.com/posts/norainfahira_festival-of-ideas-in-putrajaya-this-event-activity-7408716975495032834-5fP0?utm_source=share&utm_medium=member_desktop&rcm=ACoAAGEt4xcBquA37jQeQ89B8c0BNgvdjXOYllU">Posted Here on my LinkedIn ! </a></strong></small>
-                </div>
+            <div class="assignment-item">
+                <div class="assignment-title">Festival of Ideas in Putrajaya</div>
+                <p>The event was held on 5 November 2025 at Putrajaya International Convention Centre.</p>
+                <small><strong><a href="https://www.linkedin.com/posts/norainfahira_festival-of-ideas-in-putrajaya-this-event-activity-7408716975495032834-5fP0?utm_source=share&utm_medium=member_desktop&rcm=ACoAAGEt4xcBquA37jQeQ89B8c0BNgvdjXOYllU">Posted Here on my LinkedIn !</a></strong></small>
+            </div>
 
-                <div class="assignment-item">
-                    <div class="assignment-title">Program Pembangunan Pelajar SECPH 2025 </div>
-                    <p>The event was held on 8 November 2025 at Kejora Hall, N28a, Faculty of Computing.</p>
-                    <small><strong><a href="https://www.linkedin.com/posts/norainfahira_program-pembangunan-pelajar-secph-2025-on-activity-7408722935063965696-qPiI?utm_source=share&utm_medium=member_desktop&rcm=ACoAAGEt4xcBquA37jQeQ89B8c0BNgvdjXOYllU">Posted Here on my LinkedIn ! </a></strong></small>
-                </div>
+            <div class="assignment-item">
+                <div class="assignment-title">Program Pembangunan Pelajar SECPH 2025</div>
+                <p>The event was held on 8 November 2025 at Kejora Hall, N28a, Faculty of Computing.</p>
+                <small><strong><a href="https://www.linkedin.com/posts/norainfahira_program-pembangunan-pelajar-secph-2025-on-activity-7408722935063965696-qPiI?utm_source=share&utm_medium=member_desktop&rcm=ACoAAGEt4xcBquA37jQeQ89B8c0BNgvdjXOYllU">Posted Here on my LinkedIn !</a></strong></small>
+            </div>
 
-                <div class="assignment-item">
-                    <div class="assignment-title">ASEAN Quantum Summit 2025 </div>
-                    <p>The event was held on 11 December 2025 at Dewan Sultan Iskandar at Universiti Teknolgi Malaysia (UTM).</p>
-                    <small><strong><a href="https://www.linkedin.com/posts/norainfahira_on-11-december-2025-attended-the-asean-activity-7411620434028232704-4q2D?utm_source=share&utm_medium=member_desktop&rcm=ACoAAGEt4xcBquA37jQeQ89B8c0BNgvdjXOYllU">Posted Here on my LinkedIn ! </a></strong></small>
-                </div>
-            
+            <div class="assignment-item">
+                <div class="assignment-title">ASEAN Quantum Summit 2025</div>
+                <p>The event was held on 11 December 2025 at Dewan Sultan Iskandar at Universiti Teknolgi Malaysia (UTM).</p>
+                <small><strong><a href="https://www.linkedin.com/posts/norainfahira_on-11-december-2025-attended-the-asean-activity-7411620434028232704-4q2D?utm_source=share&utm_medium=member_desktop&rcm=ACoAAGEt4xcBquA37jQeQ89B8c0BNgvdjXOYllU">Posted Here on my LinkedIn !</a></strong></small>
+            </div>
         </div>
     </section>
     
@@ -1078,167 +515,7 @@
         <p>Last updated: <span id="current-date"></span> | Synced with GitHub</p>
     </footer>
 
-    <!-- javascript -->
-    <script>
-        // Function untuk format date
-        function formatDate() {
-            const now = new Date();
-            return now.toLocaleDateString('en-MY', {
-                day: 'numeric',
-                month: 'long',
-                year: 'numeric'
-            });
-        }
-        
-        // Function untuk simulate GitHub API call
-        function simulateGitHubAPI() {
-            const githubData = {
-                name: "Nor Ain Fahira binti Muhamad Fariq",
-                bio: "Undergraduate Student of Computer Science in Data Engineering at Universiti Teknologi Malaysia",
-                location: "Johor Bahru, Malaysia",
-                html_url: "https://github.com/norainfahira",
-                avatar_url: "https://avatars.githubusercontent.com/u/242617684?v=4",
-                public_repos: 3,
-                public_gists: 0,
-                followers: 5,
-                following: 4,
-            };
-            
-            // Update profile data
-            document.getElementById('github-name').textContent = githubData.name;
-            document.getElementById('github-bio').textContent = githubData.bio;
-            document.getElementById('github-location').textContent = githubData.location;
-            document.getElementById('github-profile').textContent = githubData.html_url;
-            document.getElementById('github-profile').href = githubData.html_url;
-            document.getElementById('github-avatar').src = githubData.avatar_url;
-            
-            // Update stats
-            document.getElementById('repo-count').textContent = githubData.public_repos;
-            document.getElementById('gist-count').textContent = githubData.public_gists;
-            document.getElementById('follower-count').textContent = githubData.followers;
-            
-            // Update buttons
-            document.getElementById('visit-github-btn').href = githubData.html_url;
-            
-            // Update sync status
-            document.getElementById('sync-status').innerHTML = `Status : <strong>Synced with GitHub</strong> (Last update : ${new Date().toLocaleTimeString()})`;
-        }
-
-// ========== FUNCTION UNTUK TOGGLE SEMUA FOLDER ==========
-function toggleSemester(contentId, arrowId) {
-    const content = document.getElementById(contentId);
-    const arrow = document.getElementById(arrowId);
-    
-    content.classList.toggle('show');
-    
-    if (content.classList.contains('show')) {
-        arrow.innerHTML = '▲';
-    } else {
-        arrow.innerHTML = '▼';
-    }
-}
-        
-        // ========== FUNCTIONS UNTUK SUBJECT NAVIGATION ==========
-        // Function untuk pergi ke section
-        function goToSection(sectionId) {
-            // Hide homepage elements
-            document.querySelector('header').style.display = 'none';
-            document.querySelector('.container').style.display = 'none';
-            document.querySelector('footer').style.display = 'none';
-            
-            // Hide all sections dulu
-            document.querySelectorAll('.subject-section').forEach(section => {
-                section.style.display = 'none';
-            });
-            
-            // Show section yang dipilih
-            const targetSection = document.getElementById(sectionId);
-            if (targetSection) {
-                targetSection.style.display = 'block';
-                // Scroll ke atas
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-        }
-        
-        // Function untuk balik ke homepage
-        function goBackHome() {
-            // Show semua homepage elements
-            document.querySelector('header').style.display = 'block';
-            document.querySelector('.container').style.display = 'flex';
-            document.querySelector('footer').style.display = 'block';
-            
-            // Hide all sections
-            document.querySelectorAll('.subject-section').forEach(section => {
-                section.style.display = 'none';
-            });
-            
-            // Scroll ke atas
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-      // ========== DAILY QUOTE & LYRIC ==========
-      function updateDailyContent() {
-      // ===== QUOTES =====
-      const quotes = [
-        { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
-        { text: "Code is like humor. When you have to explain it, it’s bad.", author: "Cory House" },
-        { text: "First, solve the problem. Then, write the code.", author: "John Johnson" },
-        { text: "It's not a bug; it's an undocumented feature.", author: "Anonymous" },
-        { text: "Make it work, make it right, make it fast.", author: "Kent Beck" },
-        { text: "Programming isn't about what you know; it's about what you can figure out.", author: "Chris Pine" },
-        { text: "Simplicity is the soul of efficiency.", author: "Austin Freeman" },
-        { text: "Your limitation—it's only your imagination.", author: "Unknown" }
-      ];
-
-      // ===== LYRICS =====
-      const lyrics = [
-        { text: "We don't need to fall in love, we don't need to fall apart", artist: "Pastel Ghost" },
-        { text: "I'm still standing better than I ever did", artist: "Elton John" },
-        { text: "And I will always love you", artist: "Whitney Houston" },
-        { text: "Somewhere over the rainbow, way up high", artist: "Israel Kamakawiwoʻole" },
-        { text: "Cause I'm yours, I'm yours", artist: "Jason Mraz" },
-        { text: "Counting stars, one, two, three", artist: "OneRepublic" },
-        { text: "We don't talk anymore, we don't talk anymore", artist: "Charlie Puth" },
-        { text: "Hello from the other side", artist: "Adele" }
-      ];
-
-      // Dapatkan tarikh hari ini (untuk pilih quote yang sama sepanjang hari)
-      const today = new Date();
-      const day = today.getDate();
-      const month = today.getMonth();
-      const year = today.getFullYear();
-
-      // Format hari & tarikh
-      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-      document.getElementById('current-day').innerText = today.toLocaleDateString('en-MY', options);
-
-      // Pilih quote berdasarkan tarikh (supaya sama setiap hari)
-       const quoteIndex = (day + month + year) % quotes.length;
-      document.getElementById('daily-quote').innerText = `"${quotes[quoteIndex].text}"`;
-      document.getElementById('quote-author').innerText = `— ${quotes[quoteIndex].author}`;
-
-      // Pilih lirik berdasarkan tarikh (atau nak random?)
-      const lyricIndex = (day + month + year + 3) % lyrics.length; // +3 supaya tak sama dengan quote
-      document.getElementById('daily-lyric').innerText = `"${lyrics[lyricIndex].text}"`;
-      document.getElementById('lyric-artist').innerText = `— ${lyrics[lyricIndex].artist}`;
-      }
-      
-        // Function untuk initialize website
-        function initWebsite() {
-            // Set current date di footer
-            document.getElementById('current-date').textContent = formatDate();
-            
-            // Simulate API call dengan delay 1.5 saat
-            setTimeout(simulateGitHubAPI, 1500);
-            
-            // Setup contact button
-            document.getElementById('contact-btn').href = "mailto:norainfahira@gmail.com";
-       
-            // PANGGIL FUNCTION QUOTE & LYRIC
-            updateDailyContent();   // ← TAMBAH SINI
-        }
-        
-        window.onload = initWebsite;
-    </script>
+    <!-- Link ke JavaScript external -->
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,481 @@
+/* ========== RESET & BASE STYLES ========== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Setting untuk seluruh body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f0f8ff;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ========== HEADER STYLES ========== */
+header {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(30, 60, 114, 0.2);
+}
+
+h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* ========== LAYOUT CONTAINER ========== */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.sidebar {
+    flex: 1;
+    min-width: 300px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 100, 0.1);
+}
+
+.main-content {
+    flex: 2;
+    min-width: 300px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 100, 0.1);
+}
+
+/* ========== PROFILE SECTION ========== */
+.profile-pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #4d7cff;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+/* ========== GITHUB SYNC INFO ========== */
+.github-sync {
+    background-color: #e6f2ff;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+    border-left: 5px solid #2a5298;
+}
+
+.github-stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.stat {
+    text-align: center;
+    padding: 15px;
+    background-color: #f8fbff;
+    border-radius: 8px;
+    min-width: 0;
+    flex: 1;
+    margin: 0 4px;
+    border: 1px solid #cce0ff;
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #1e3c72;
+}
+
+/* ========== README SECTION ========== */
+.readme-section {
+    background-color: #f8fbff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 25px;
+    border: 1px dashed #4d7cff;
+}
+
+/* ========== FOOTER ========== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1e3c72;
+    color: white;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* ========== LINKS & BUTTONS ========== */
+a {
+    color: #2a5298;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #1e3c72;
+    text-decoration: underline;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #4d7cff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 5px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #2a5298;
+    text-decoration: none;
+}
+
+/* ========== SOCIAL ICONS ========== */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 15px;
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+    color: #2a5298;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #1e3c72;
+}
+
+/* ========== HEADINGS ========== */
+h2 {
+    color: #1e3c72;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e6f2ff;
+}
+
+h3 {
+    color: #2a5298;
+    margin: 15px 0 10px 0;
+}
+
+/* ========== STUDENT NOTE ========== */
+.student-note {
+    background-color: #f8fbff;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    font-size: 0.9rem;
+    border-left: 4px solid #1e3c72;
+}
+
+/* ========== FOLDER SEMESTER STYLES ========== */
+.semester-folder {
+    margin: 30px 0 20px 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(30, 60, 114, 0.15);
+}
+
+.folder-btn {
+    width: 100%;
+    padding: 18px 25px;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    border: none;
+    text-align: left;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+}
+
+.folder-btn:hover {
+    background: linear-gradient(135deg, #2a5298, #1e3c72);
+    padding-left: 30px;
+}
+
+.folder-icon {
+    font-size: 28px;
+}
+
+.arrow {
+    margin-left: auto;
+    transition: transform 0.3s;
+    font-size: 20px;
+}
+
+.semester-content {
+    display: none;
+    padding: 25px;
+    background: #f8fbff;
+    border: 1px solid #cce0ff;
+    border-top: none;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.semester-content.show {
+    display: block;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== SUBJECT LIST STYLES ========== */
+.subject-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 12px;
+}
+
+.subject-list li {
+    margin: 0;
+}
+
+.subject-list a {
+    display: block;
+    padding: 14px 18px;
+    background: white;
+    color: #1e3c72;
+    text-decoration: none;
+    border-radius: 8px;
+    border: 1px solid #d4e3ff;
+    font-weight: 500;
+    transition: all 0.25s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.subject-list a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(30, 60, 114, 0.25);
+    border-color: #1e3c72;
+}
+
+/* ========== SUBJECT LIST BORDER COLORS - SEMESTER 1 ========== */
+#semesterContent1 .subject-list li:nth-child(1) a { border-left: 5px solid #e74c3c; }
+#semesterContent1 .subject-list li:nth-child(2) a { border-left: 5px solid #2ecc71; }
+#semesterContent1 .subject-list li:nth-child(3) a { border-left: 5px solid #f39c12; }
+#semesterContent1 .subject-list li:nth-child(4) a { border-left: 5px solid #9b59b6; }
+#semesterContent1 .subject-list li:nth-child(5) a { border-left: 5px solid #1abc9c; }
+#semesterContent1 .subject-list li:nth-child(6) a { border-left: 5px solid #ff8a9d; }
+
+/* ========== SUBJECT LIST BORDER COLORS - SEMESTER 2 ========== */
+#semesterContent2 .subject-list li:nth-child(1) a { border-left: 5px solid #e74c3c; }
+#semesterContent2 .subject-list li:nth-child(2) a { border-left: 5px solid #2ecc71; }
+#semesterContent2 .subject-list li:nth-child(3) a { border-left: 5px solid #f39c12; }
+#semesterContent2 .subject-list li:nth-child(4) a { border-left: 5px solid #9b59b6; }
+#semesterContent2 .subject-list li:nth-child(5) a { border-left: 5px solid #1abc9c; }
+#semesterContent2 .subject-list li:nth-child(6) a { border-left: 5px solid #3498db; }
+#semesterContent2 .subject-list li:nth-child(7) a { border-left: 5px solid #ff8a9d; }
+
+/* ========== GRID MINIMAL (ON-GOING SUBJECTS) ========== */
+.grid-minimal {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.grid-minimal .box {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    min-height: 160px;
+    border-left: 5px solid #4d7cff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.grid-minimal .box:nth-child(7) {
+    grid-column: span 3;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    background: #f0f8ff;
+}
+
+/* Warna berbeza untuk setiap kotak */
+.grid-minimal .box:nth-child(1) { border-left-color: #e74c3c; }
+.grid-minimal .box:nth-child(2) { border-left-color: #2ecc71; }
+.grid-minimal .box:nth-child(3) { border-left-color: #f39c12; }
+.grid-minimal .box:nth-child(4) { border-left-color: #9b59b6; }
+.grid-minimal .box:nth-child(5) { border-left-color: #1abc9c; }
+.grid-minimal .box:nth-child(6) { border-left-color: #3498db; }
+.grid-minimal .box:nth-child(7) { border-left-color: #ff8a9d; }
+
+/* ========== SUBJECT SECTION STYLES ========== */
+.subject-section {
+    display: none;
+    min-height: 100vh;
+    padding: 40px;
+    background: white;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.back-button {
+    display: inline-block;
+    background: #4d7cff;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.back-button:hover {
+    background: #2a5298;
+}
+
+.subject-content {
+    margin-top: 20px;
+}
+
+.subject-content h2 {
+    color: #1e3c72;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e6f2ff;
+}
+
+/* ========== ASSIGNMENT STYLES ========== */
+.assignment-list {
+    background: #f8fbff;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    border-left: 4px solid #2a5298;
+}
+
+.assignment-item {
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px 0;
+    border-left: 3px solid #4d7cff;
+}
+
+.assignment-title {
+    font-weight: bold;
+    color: #1e3c72;
+    margin-bottom: 5px;
+}
+
+.assignment-status {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    margin-left: 10px;
+}
+
+.status-completed {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.status-inprogress {
+    background: #cce5ff;
+    color: #004085;
+}
+
+/* ========== LIST STYLES ========== */
+ul, ol {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    .sidebar, .main-content {
+        width: 100%;
+    }
+    
+    .subject-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .folder-btn {
+        font-size: 1.1rem;
+        padding: 15px 20px;
+    }
+    
+    .grid-minimal {
+        grid-template-columns: 1fr;
+    }
+    
+    .grid-minimal .box:nth-child(7) {
+        grid-column: span 1;
+    }
+}

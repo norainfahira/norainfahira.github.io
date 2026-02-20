@@ -113,29 +113,28 @@ function goBackHome() {
 // ========== DAILY QUOTE & LYRIC ==========
 // Function ni untuk update quote dan lirik setiap hari
 function updateDailyContent() {
-    // ===== QUOTES ===== — collection inspirasi quotes
-    const quotes = [
-        { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
-        { text: "Code is like humor. When you have to explain it, it’s bad.", author: "Cory House" },
-        { text: "First, solve the problem. Then, write the code.", author: "John Johnson" },
-        { text: "It's not a bug; it's an undocumented feature.", author: "Anonymous" },
-        { text: "Make it work, make it right, make it fast.", author: "Kent Beck" },
-        { text: "Programming isn't about what you know; it's about what you can figure out.", author: "Chris Pine" },
-        { text: "Simplicity is the soul of efficiency.", author: "Austin Freeman" },
-        { text: "Your limitation—it's only your imagination.", author: "Unknown" }
-    ];
 
-    // ===== LYRICS ===== — collection lirik lagu random
-    const lyrics = [
-        { text: "We don't need to fall in love, we don't need to fall apart", artist: "Pastel Ghost" },
-        { text: "I'm still standing better than I ever did", artist: "Elton John" },
-        { text: "And I will always love you", artist: "Whitney Houston" },
-        { text: "Somewhere over the rainbow, way up high", artist: "Israel Kamakawiwoʻole" },
-        { text: "Cause I'm yours, I'm yours", artist: "Jason Mraz" },
-        { text: "Counting stars, one, two, three", artist: "OneRepublic" },
-        { text: "We don't talk anymore, we don't talk anymore", artist: "Charlie Puth" },
-        { text: "Hello from the other side", artist: "Adele" }
-    ];
+// ===== QUOTES BERDASARKAN HARI =====
+const quotesByDay = {
+    sunday:    { text: "Quote untuk Ahad", author: "Penulis Ahad" },
+    monday:    { text: "Quote untuk Isnin", author: "Penulis Isnin" },
+    tuesday:   { text: "Quote untuk Selasa", author: "Penulis Selasa" },
+    wednesday: { text: "Quote untuk Rabu", author: "Penulis Rabu" },
+    thursday:  { text: "Quote untuk Khamis", author: "Penulis Khamis" },
+    friday:    { text: "Quote untuk Jumaat", author: "Penulis Jumaat" },
+    saturday:  { text: "Quote untuk Sabtu", author: "Penulis Sabtu" }
+};
+
+// ===== LYRICS BERDASARKAN HARI =====
+const lyricsByDay = {
+    sunday:    { text: "Lirik untuk Ahad", artist: "Penyanyi Ahad" },
+    monday:    { text: "Lirik untuk Isnin", artist: "Penyanyi Isnin" },
+    tuesday:   { text: "Lirik untuk Selasa", artist: "Penyanyi Selasa" },
+    wednesday: { text: "Lirik untuk Rabu", artist: "Penyanyi Rabu" },
+    thursday:  { text: "Lirik untuk Khamis", artist: "Penyanyi Khamis" },
+    friday:    { text: "Lirik untuk Jumaat", artist: "Penyanyi Jumaat" },
+    saturday:  { text: "Lirik untuk Sabtu", artist: "Penyanyi Sabtu" }
+};
 
     // Dapatkan tarikh hari ini (untuk pilih quote yang sama sepanjang hari)
     // Guna day, month, year sebagai seed — supaya semua orang nampak quote sama pada hari yang sama

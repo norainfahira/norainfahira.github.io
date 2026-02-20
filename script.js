@@ -171,8 +171,27 @@ function initWebsite() {
     // Setup contact button — terus buka email client
     document.getElementById('contact-btn').href = "mailto:norainfahira@gmail.com";
     
-    // PANGGIL FUNCTION QUOTE & LYRIC — update content
-    updateDailyContent();
+// PANGGIL FUNCTION QUOTE & LYRIC — update content
+    function updateDailyContent() {
+    // Dapatkan hari ini (dalam Bahasa Inggeris)
+    const today = new Date();
+    const dayName = today.toLocaleDateString('en-MY', { weekday: 'long' }).toLowerCase();
+    // 'monday', 'tuesday', etc.
+
+    // Format hari & tarikh
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById('current-day').innerText = today.toLocaleDateString('en-MY', options);
+
+    // Ambil quote berdasarkan hari
+    const todaysQuote = quotesByDay[dayName] || quotesByDay.sunday; // fallback ke Ahad
+    document.getElementById('daily-quote').innerText = `"${todaysQuote.text}"`;
+    document.getElementById('quote-author').innerText = `— ${todaysQuote.author}`;
+
+    // Ambil lirik berdasarkan hari
+    const todaysLyric = lyricsByDay[dayName] || lyricsByDay.sunday;
+    document.getElementById('daily-lyric').innerText = `"${todaysLyric.text}"`;
+    document.getElementById('lyric-artist').innerText = `— ${todaysLyric.artist}`;
+}
 }
 
 // ========== WINDOW ONLOAD ==========

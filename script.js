@@ -116,23 +116,23 @@ function updateDailyContent() {
 
 // ===== QUOTES BERDASARKAN HARI =====
 const quotesByDay = {
-    sunday:    { text: "Quote untuk Ahad", author: "Penulis Ahad" },
-    monday:    { text: "Quote untuk Isnin", author: "Penulis Isnin" },
-    tuesday:   { text: "Quote untuk Selasa", author: "Penulis Selasa" },
-    wednesday: { text: "Quote untuk Rabu", author: "Penulis Rabu" },
-    thursday:  { text: "Quote untuk Khamis", author: "Penulis Khamis" },
-    friday:    { text: "Quote untuk Jumaat", author: "Penulis Jumaat" },
-    saturday:  { text: "Quote untuk Sabtu", author: "Penulis Sabtu" }
+    sunday:    { text: " ", author: "Anonymous" },
+    monday:    { text: "I’m learning quietly, but I’m moving forward.", author: "Anonymous" },
+    tuesday:   { text: "Quote untuk Selasa", author: "Anonymous" },
+    wednesday: { text: "Quote untuk Rabu", author: "Anonymous" },
+    thursday:  { text: "Quote untuk Khamis", author: "Anonymous" },
+    friday:    { text: "I trust myself to rise, again and again.", author: "Anonymous" },
+    saturday:  { text: "Quote untuk Sabtu", author: "Anonymous" }
 };
 
 // ===== LYRICS BERDASARKAN HARI =====
 const lyricsByDay = {
     sunday:    { text: "Lirik untuk Ahad", artist: "Penyanyi Ahad" },
-    monday:    { text: "Lirik untuk Isnin", artist: "Penyanyi Isnin" },
+    monday:    { text: "I’m doing better than I ever was…", artist: "Call It What You Want (Taylor Swift)" },
     tuesday:   { text: "Lirik untuk Selasa", artist: "Penyanyi Selasa" },
     wednesday: { text: "Lirik untuk Rabu", artist: "Penyanyi Rabu" },
     thursday:  { text: "Lirik untuk Khamis", artist: "Penyanyi Khamis" },
-    friday:    { text: "Lirik untuk Jumaat", artist: "Penyanyi Jumaat" },
+    friday:    { text: "Loves me like I’m brand new…", artist: "Call It What You Want (Taylor Swift)" },
     saturday:  { text: "Lirik untuk Sabtu", artist: "Penyanyi Sabtu" }
 };
 

@@ -173,24 +173,41 @@ function initWebsite() {
     
 // PANGGIL FUNCTION QUOTE & LYRIC — update content
     function updateDailyContent() {
-    // Dapatkan hari ini (dalam Bahasa Inggeris)
+    // Dapatkan tarikh hari ini
     const today = new Date();
-    const dayName = today.toLocaleDateString('en-MY', { weekday: 'long' }).toLowerCase();
-    // 'monday', 'tuesday', etc.
-
-    // Format hari & tarikh
+    
+    // Dapatkan nama hari dalam format Monday, Tuesday, etc.
+    const dayName = today.toLocaleDateString('en-MY', { weekday: 'long' }); 
+    // Contoh: "Monday", "Tuesday"
+    
+    // Format hari & tarikh penuh (contoh: Monday, 20 February 2026)
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     document.getElementById('current-day').innerText = today.toLocaleDateString('en-MY', options);
 
-    // Ambil quote berdasarkan hari
-    const todaysQuote = quotesByDay[dayName] || quotesByDay.sunday; // fallback ke Ahad
-    document.getElementById('daily-quote').innerText = `"${todaysQuote.text}"`;
-    document.getElementById('quote-author').innerText = `— ${todaysQuote.author}`;
+    // DEBUG: Tengok kat console (tekan F12)
+    console.log("Hari ni:", dayName);
+    console.log("Quote:", quotesByDay[dayName]);
+    console.log("Lirik:", lyricsByDay[dayName]);
+
+    // Ambil quote berdasarkan hari (kalau takde, guna default)
+    const todaysQuote = quotesByDay[dayName];
+    if (todaysQuote) {
+        document.getElementById('daily-quote').innerText = `"${todaysQuote.text}"`;
+        document.getElementById('quote-author').innerText = `— ${todaysQuote.author}`;
+    } else {
+        document.getElementById('daily-quote').innerText = '"Quote tidak dijumpai"';
+        document.getElementById('quote-author').innerText = '— Unknown';
+    }
 
     // Ambil lirik berdasarkan hari
-    const todaysLyric = lyricsByDay[dayName] || lyricsByDay.sunday;
-    document.getElementById('daily-lyric').innerText = `"${todaysLyric.text}"`;
-    document.getElementById('lyric-artist').innerText = `— ${todaysLyric.artist}`;
+    const todaysLyric = lyricsByDay[dayName];
+    if (todaysLyric) {
+        document.getElementById('daily-lyric').innerText = `"${todaysLyric.text}"`;
+        document.getElementById('lyric-artist').innerText = `— ${todaysLyric.artist}`;
+    } else {
+        document.getElementById('daily-lyric').innerText = '"Lirik tidak dijumpai"';
+        document.getElementById('lyric-artist').innerText = '— Unknown';
+    }
 }
 }
 

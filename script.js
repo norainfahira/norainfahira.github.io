@@ -97,23 +97,23 @@ function goBackHome() {
 
 // ========== QUOTES & LYRICS IKUT HARI ==========
 const quotesByDay = {
-    Sunday:    { text: " ", author: "Anonymous" },
+    Sunday:    { text: "I let things come in their own time, quietly.", author: "Anonymous" },
     Monday:    { text: "I’m learning quietly, but I’m moving forward.", author: "Anonymous" },
-    Tuesday:   { text: "Quote untuk Selasa", author: "Anonymous" },
-    Wednesday: { text: "Quote untuk Rabu", author: "Anonymous" },
-    Thursday:  { text: "Quote untuk Khamis", author: "Anonymous" },
+    Tuesday:   { text: "I notice you, even when I try not to.", author: "Anonymous" },
+    Wednesday: { text: "Everything I see reminds me to think deeper.", author: "Anonymous" },
+    Thursday:  { text: "I’d choose simplicity if it means it’s real.", author: "Anonymous" },
     Friday:    { text: "I trust myself to rise, again and again.", author: "Anonymous" },
-    Saturday:  { text: "Quote untuk Sabtu", author: "Anonymous" }
+    Saturday:  { text: "Parting leaves marks, but it won’t break me.", author: "Anonymous" }
 };
 
 const lyricsByDay = {
-    Sunday:    { text: "Lirik untuk Ahad", artist: "Penyanyi Ahad" },
+    Sunday:    { text: "Not everything loud is love…", artist: "inspired by Love Me Not / The 1975 vibe" },
     Monday:    { text: "I’m doing better than I ever was…", artist: "Call It What You Want (Taylor Swift)" },
-    Tuesday:   { text: "Lirik untuk Selasa", artist: "Penyanyi Selasa" },
-    Wednesday: { text: "Lirik untuk Rabu", artist: "Penyanyi Rabu" },
-    Thursday:  { text: "Lirik untuk Khamis", artist: "Penyanyi Khamis" },
+    Tuesday:   { text: "I don’t need you, but I miss you…", artist: "Love Me Not (Ravyn Lenae ft. Rex Orange County)" },
+    Wednesday: { text: "Everything feels like it’s about you…", artist: "About You (The 1975)" },
+    Thursday:  { text: "I’d marry you with paper rings…", artist: "Paper Rings (Taylor Swift)" },
     Friday:    { text: "Loves me like I’m brand new…", artist: "Call It What You Want (Taylor Swift)" },
-    Saturday:  { text: "Lirik untuk Sabtu", artist: "Penyanyi Sabtu" }
+    Saturday:  { text: "Goodbyes are bittersweet, but it’s not the end…", artist: "Walking in the Wind (One Direction)" }
 };
 
 // ========== DAILY QUOTE & LYRIC (IKUT HARI) ==========

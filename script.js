@@ -20,8 +20,8 @@ function simulateGitHubAPI() {
         avatar_url: "https://avatars.githubusercontent.com/u/242617684?v=4",
         public_repos: 3,
         public_gists: 0,
-        followers: 5,
-        following: 4,
+        followers: 6,
+        following: 10,
     };
     
     // Update profile data

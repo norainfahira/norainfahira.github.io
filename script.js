@@ -20,7 +20,7 @@ function simulateGitHubAPI() {
         avatar_url: "https://avatars.githubusercontent.com/u/242617684?v=4",
         public_repos: 3,
         public_gists: 0,
-        followers: 6,
+        followers: 7,
         following: 10,
     };
     

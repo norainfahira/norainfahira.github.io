@@ -106,6 +106,7 @@ const quotesByDay = {
     Saturday:  { text: "Parting leaves marks, but it won’t break me.", author: "Anonymous" }
 };
 
+/*
 const lyricsByDay = {
     Sunday:    { text: "Not everything loud is love…", artist: "inspired by Love Me Not / The 1975 vibe" },
     Monday:    { text: "I’m doing better than I ever was…", artist: "Call It What You Want (Taylor Swift)" },
@@ -115,6 +116,7 @@ const lyricsByDay = {
     Friday:    { text: "Loves me like I’m brand new…", artist: "Call It What You Want (Taylor Swift)" },
     Saturday:  { text: "Goodbyes are bittersweet, but it’s not the end…", artist: "Walking in the Wind (One Direction)" }
 };
+*/
 
 // ========== DAILY QUOTE & LYRIC (IKUT HARI) ==========
 function updateDailyContent() {
@@ -144,7 +146,7 @@ function updateDailyContent() {
         document.getElementById('quote-author').innerText = '— Unknown';
     }
 
-    // Ambil lirik berdasarkan hari
+    /* Ambil lirik berdasarkan hari
     const todaysLyric = lyricsByDay[dayName];
     if (todaysLyric) {
         document.getElementById('daily-lyric').innerText = `"${todaysLyric.text}"`;
@@ -153,6 +155,7 @@ function updateDailyContent() {
         document.getElementById('daily-lyric').innerText = '"Lirik tidak dijumpai"';
         document.getElementById('lyric-artist').innerText = '— Unknown';
     }
+    */
 }
 
 // ========== INITIALIZATION FUNCTION ==========

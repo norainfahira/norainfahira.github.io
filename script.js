@@ -134,7 +134,7 @@ function updateDailyContent() {
     // DEBUG (boleh tengok kat console F12)
     console.log("Hari ni:", dayName);
     console.log("Quote untuk hari ni:", quotesByDay[dayName]);
-    console.log("Lirik untuk hari ni:", lyricsByDay[dayName]);
+    // console.log("Lirik untuk hari ni:", lyricsByDay[dayName]);
 
     // Ambil quote berdasarkan hari
     const todaysQuote = quotesByDay[dayName];

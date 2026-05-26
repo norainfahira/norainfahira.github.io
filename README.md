@@ -1,7 +1,7 @@
 # ⚠️ PROPRIETARY CODE - DO NOT COPY
 
 ![License](https://img.shields.io/badge/License-Proprietary-red)
-![Status](https://img.shields.io/badge/Status-Live%20Demo-blue)
+[![Status](https://img.shields.io/badge/Status-Live%20Demo-blue)](https://norainfahira.github.io)
 
 ## 🚨 LEGAL NOTICE
 This repository contains **CLOSED SOURCE CODE** published for **PORTFOLIO SHOWCASE ONLY**.

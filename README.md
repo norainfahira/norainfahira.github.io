@@ -1,6 +1,6 @@
 # ⚠️ PROPRIETARY CODE - DO NOT COPY
 
-![License](https://img.shields.io/badge/License-Proprietary-red)
+[![License](https://img.shields.io/badge/License-Proprietary-red)](https://github.com/norainfahira/norainfahira.github.io/blob/main/LICENSE)
 [![Status](https://img.shields.io/badge/Status-Live%20Demo-blue)](https://norainfahira.github.io)
 
 ## 🚨 LEGAL NOTICE
